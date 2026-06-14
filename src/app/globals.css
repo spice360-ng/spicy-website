@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    /* --- Colors (from Figma) --- */
+    --c-black:        #000000;
+    --c-ink:          #1A1A1A;
+    --c-white:        #FFFFFF;
+    --c-off-white:    #F5F9F4;
+
+    --c-green-dark:   #2B5833;   /* Brand Strategy block, glow base */
+    --c-green-bright: #69CE7D;   /* eyebrow labels, glow */
+    --c-lime:         #E3FC6A;   /* primary CTA, number chips, glow */
+    --c-yellow:       #EEA953;   /* Digital Content block, glow */
+    --c-red:          #BC3431;   /* Integrated Campaigns block */
+
+    --c-muted:        #898983;   /* muted body on light */
+    --c-muted-on-dark: rgba(255, 255, 255, 0.62);
+    --c-border-dark:  rgba(255, 255, 255, 0.12);
+    --c-border-light: rgba(13, 21, 18, 0.10);
+
+    /* --- Typography --- */
+    --font-sans: 'Google Sans Flex', system-ui, -apple-system, sans-serif;
+    --font-dm:   'DM Sans', system-ui, -apple-system, sans-serif;
+
+    /* Type — exact Figma px (desktop 1440 frame) */
+    --fs-display: 48px;      /* section headings; mobile → 32 */
+    --fs-title:   24px;      /* card titles */
+    --fs-stat:    28px;      /* scoreboard numbers */
+    --fs-pillar:  25px;      /* pillar numbers */
+    --fs-label:   16px;      /* eyebrow / role labels */
+    --fs-body:    18px;      /* body copy */
+    --fs-link:    16px;      /* footer links */
+    --fs-pill:    12px;      /* button + nav labels */
+
+    --fw-medium:   500;
+    --fw-semibold: 600;
+
+    --ls-display: -0.05em;
+    --ls-title:   -0.06em;
+    --ls-body:    -0.04em;
+    --ls-label:   -0.05em;
+
+    /* --- Layout --- */
+    --container:   1230px;     /* Figma inner content width (1440 − 2×105) */
+    --gutter:      clamp(20px, 7.3vw, 105px);
+    --radius:      8px;        /* buttons */
+}
+
+@media (max-width: 760px) {
+    :root {
+        --fs-display: 32px;
+        --gutter: 24px;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.45;
+    background: var(--c-black);
+    color: var(--c-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+h1, h2, h3, h4 {
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-display);
+    line-height: 0.96;
+}
