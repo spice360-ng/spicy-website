@@ -1,0 +1,143 @@
+.section {
+    position: relative;
+    overflow: hidden;
+    background: var(--c-black);
+    padding: 6rem var(--gutter) 7rem;
+}
+
+.inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eyebrow {
+    font-size: var(--fs-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    color: var(--c-green-bright);
+}
+
+.heading {
+    margin-top: 0.75rem;
+    font-size: var(--fs-display);
+    letter-spacing: var(--ls-display);
+    color: var(--c-white);
+    text-align: center;
+}
+
+.copy {
+    margin-top: 1.25rem;
+    max-width: 44ch;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.45;
+    color: var(--c-muted-on-dark);
+    text-align: center;
+}
+
+.cta {
+    margin-top: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    height: 46px;
+    padding: 0 1.25rem;
+    border-radius: 8px;
+    background: var(--c-green-dark);
+    color: var(--c-white);
+    font-family: var(--font-dm);
+    font-size: var(--fs-pill);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    transition: filter 0.2s;
+
+    &:hover {
+        filter: brightness(1.15);
+    }
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.featured {
+    margin-top: 3.5rem;
+    aspect-ratio: 1150 / 606;
+}
+
+.grid {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.grid .card {
+    aspect-ratio: 571 / 610;
+}
+
+.photo {
+    object-fit: cover;
+}
+
+.scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 35%, rgba(0, 0, 0, 0.82) 100%);
+}
+
+.meta {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 2rem;
+    max-width: 30ch;
+}
+
+.date {
+    font-size: var(--fs-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.title {
+    margin-top: 0.6rem;
+    font-size: var(--fs-title);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    line-height: 1.05;
+    color: var(--c-white);
+}
+
+.tag {
+    margin-top: 0.6rem;
+    font-size: var(--fs-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 760px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .featured {
+        aspect-ratio: 360 / 320;
+    }
+
+    .grid .card {
+        aspect-ratio: 360 / 380;
+    }
+}
