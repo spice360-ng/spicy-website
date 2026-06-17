@@ -1,0 +1,88 @@
+.section {
+    background: var(--c-black);
+    padding: 80px var(--gutter);
+}
+
+.inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+ * Rows are a 965px-wide block centred under the header. Each row is a flex row with
+ * space-between: number (auto) at the far left, title (auto) centred between number
+ * and body, body (fixed 356px) at the right — exactly how Figma 172:923 lays it out.
+ */
+.steps {
+    list-style: none;
+    width: 100%;
+    max-width: 965px;
+    margin-top: 153px; /* Figma gap between header block and first row */
+    display: flex;
+    flex-direction: column;
+}
+
+.step {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 21px 0; /* 60px content + 42px → 102px row pitch in Figma */
+
+    &:not(:first-child) {
+        border-top: 1px solid var(--c-border-dark);
+    }
+}
+
+.no,
+.title {
+    flex: 0 0 auto;
+    font-size: 32px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-display);
+    line-height: 32px;
+    color: var(--c-white);
+}
+
+.body {
+    flex: 0 0 356px;
+    width: 356px;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 20px;
+    color: var(--c-white);
+}
+
+@media (max-width: 760px) {
+    .section {
+        padding: 60px 24px;
+    }
+
+    .steps {
+        margin-top: 64px;
+        max-width: none;
+    }
+
+    .step {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 20px 0;
+    }
+
+    .no,
+    .title {
+        font-size: 28px;
+        line-height: 1.1;
+    }
+
+    .body {
+        flex: 1 1 auto;
+        width: 100%;
+        line-height: 1.35;
+    }
+}

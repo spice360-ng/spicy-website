@@ -1,0 +1,72 @@
+.head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.center {
+    align-items: center;
+    text-align: center;
+}
+
+.left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.eyebrow {
+    font-size: var(--fs-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    color: var(--c-green-bright);
+}
+
+.gold .eyebrow {
+    color: var(--c-yellow);
+}
+
+.red .eyebrow {
+    color: var(--c-red);
+}
+
+.muted .eyebrow {
+    color: var(--c-muted);
+}
+
+.green .eyebrow {
+    color: var(--c-green-bright);
+}
+
+.heading {
+    font-size: var(--fs-display);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-display);
+    line-height: 0.94;
+    color: var(--c-white);
+    max-width: 16ch;
+}
+
+.subcopy {
+    margin-top: 4px;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.35;
+    color: var(--c-muted-on-dark);
+    max-width: 52ch;
+}
+
+/* Light surface (white sections): near-black heading, muted subcopy. */
+.light .heading {
+    color: var(--c-ink);
+}
+
+.light .subcopy {
+    color: var(--c-muted);
+}
+
+.center .heading,
+.center .subcopy {
+    margin-left: auto;
+    margin-right: auto;
+}
