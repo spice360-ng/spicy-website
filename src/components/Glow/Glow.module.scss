@@ -6,41 +6,123 @@
     z-index: 0;
 }
 
-/* ---------- Bottom-anchored blooms ---------- */
-.bottom.warm {
-    background:
-        radial-gradient(135% 56% at 50% 110%, rgba(43, 88, 51, 0.90) 0%, rgba(43, 88, 51, 0) 68%),
-        radial-gradient(105% 36% at 50% 110%, rgba(105, 206, 125, 0.42) 0%, rgba(105, 206, 125, 0) 70%),
-        radial-gradient(80% 22% at 50% 112%, rgba(227, 252, 106, 0.32) 0%, rgba(227, 252, 106, 0) 72%);
-}
+/*
+ * Each tone is a large, soft bloom anchored to one edge that fills roughly the upper
+ * (or lower) ~65% of the section before fading to pure black — matching the oversized
+ * blurred ellipses in Figma (2324×1397, blur ~450). Colours stack brightest→faintest.
+ */
 
-.bottom.cool {
-    background:
-        radial-gradient(145% 60% at 50% 112%, rgba(43, 88, 51, 0.95) 0%, rgba(43, 88, 51, 0) 68%),
-        radial-gradient(115% 44% at 50% 112%, rgba(105, 206, 125, 0.68) 0%, rgba(105, 206, 125, 0) 70%),
-        radial-gradient(88% 28% at 50% 114%, rgba(227, 252, 106, 0.55) 0%, rgba(227, 252, 106, 0) 74%);
-}
-
-.bottom.orange {
-    background:
-        radial-gradient(120% 48% at 50% 114%, rgba(254, 94, 0, 0.30) 0%, rgba(254, 94, 0, 0) 70%);
-}
-
-/* ---------- Top-anchored blooms (hero) ---------- */
+/* ---------- Top-anchored (hero) ---------- */
 .top.warm {
     background:
-        radial-gradient(135% 56% at 50% -10%, rgba(43, 88, 51, 0.82) 0%, rgba(43, 88, 51, 0) 68%),
-        radial-gradient(105% 34% at 50% -10%, rgba(227, 252, 106, 0.26) 0%, rgba(227, 252, 106, 0) 70%),
-        radial-gradient(82% 24% at 50% -12%, rgba(238, 169, 83, 0.20) 0%, rgba(238, 169, 83, 0) 72%);
+        radial-gradient(125% 92% at 50% -4%, rgba(43, 88, 51, 0.88) 0%, rgba(43, 88, 51, 0) 70%),
+        radial-gradient(95% 64% at 50% -4%, rgba(105, 206, 125, 0.34) 0%, rgba(105, 206, 125, 0) 64%),
+        radial-gradient(68% 44% at 50% -4%, rgba(227, 252, 106, 0.20) 0%, rgba(227, 252, 106, 0) 58%);
 }
 
 .top.cool {
     background:
-        radial-gradient(140% 58% at 50% -10%, rgba(43, 88, 51, 0.9) 0%, rgba(43, 88, 51, 0) 68%),
-        radial-gradient(110% 40% at 50% -10%, rgba(105, 206, 125, 0.55) 0%, rgba(105, 206, 125, 0) 70%);
+        radial-gradient(128% 94% at 50% -4%, rgba(43, 88, 51, 0.92) 0%, rgba(43, 88, 51, 0) 70%),
+        radial-gradient(100% 66% at 50% -4%, rgba(105, 206, 125, 0.5) 0%, rgba(105, 206, 125, 0) 64%);
 }
 
 .top.orange {
     background:
-        radial-gradient(120% 48% at 50% -12%, rgba(254, 94, 0, 0.28) 0%, rgba(254, 94, 0, 0) 70%);
+        radial-gradient(125% 92% at 50% -4%, rgba(254, 94, 0, 0.4) 0%, rgba(254, 94, 0, 0) 70%);
+}
+
+/* About & Work — gold / red / pink (#EEA953, #EC6372, #F7D0D5) */
+.top.amber {
+    background:
+        radial-gradient(125% 92% at 50% -4%, rgba(238, 169, 83, 0.62) 0%, rgba(238, 169, 83, 0) 70%),
+        radial-gradient(95% 64% at 50% -4%, rgba(236, 99, 114, 0.34) 0%, rgba(236, 99, 114, 0) 64%),
+        radial-gradient(68% 44% at 50% -4%, rgba(247, 208, 213, 0.20) 0%, rgba(247, 208, 213, 0) 58%);
+}
+
+/* People — orange / red (#FE5E00, #BC3431) */
+.top.ember {
+    background:
+        radial-gradient(125% 92% at 50% -4%, rgba(254, 94, 0, 0.55) 0%, rgba(254, 94, 0, 0) 70%),
+        radial-gradient(95% 64% at 50% -4%, rgba(188, 52, 49, 0.34) 0%, rgba(188, 52, 49, 0) 64%);
+}
+
+/* ---------- Bottom-anchored ---------- */
+.bottom.warm {
+    background:
+        radial-gradient(125% 92% at 50% 104%, rgba(43, 88, 51, 0.88) 0%, rgba(43, 88, 51, 0) 70%),
+        radial-gradient(95% 64% at 50% 104%, rgba(105, 206, 125, 0.34) 0%, rgba(105, 206, 125, 0) 64%),
+        radial-gradient(68% 44% at 50% 104%, rgba(227, 252, 106, 0.20) 0%, rgba(227, 252, 106, 0) 58%);
+}
+
+.bottom.cool {
+    background:
+        radial-gradient(128% 94% at 50% 104%, rgba(43, 88, 51, 0.92) 0%, rgba(43, 88, 51, 0) 70%),
+        radial-gradient(100% 66% at 50% 104%, rgba(105, 206, 125, 0.5) 0%, rgba(105, 206, 125, 0) 64%);
+}
+
+.bottom.orange {
+    background:
+        radial-gradient(125% 92% at 50% 104%, rgba(254, 94, 0, 0.4) 0%, rgba(254, 94, 0, 0) 70%);
+}
+
+.bottom.amber {
+    background:
+        radial-gradient(125% 92% at 50% 104%, rgba(238, 169, 83, 0.62) 0%, rgba(238, 169, 83, 0) 70%),
+        radial-gradient(95% 64% at 50% 104%, rgba(236, 99, 114, 0.34) 0%, rgba(236, 99, 114, 0) 64%),
+        radial-gradient(68% 44% at 50% 104%, rgba(247, 208, 213, 0.20) 0%, rgba(247, 208, 213, 0) 58%);
+}
+
+.bottom.ember {
+    background:
+        radial-gradient(125% 92% at 50% 104%, rgba(254, 94, 0, 0.55) 0%, rgba(254, 94, 0, 0) 70%),
+        radial-gradient(95% 64% at 50% 104%, rgba(188, 52, 49, 0.34) 0%, rgba(188, 52, 49, 0) 64%);
+}
+
+/*
+ * ---------- Ellipse variants (the real Figma treatment) ----------
+ * A single oversized ellipse (Figma: 2324×1397, centred on the 1440 frame) bleeding
+ * off one edge. Figma carries no blur on the layer, so we add filter: blur(80px) to
+ * reproduce the soft edge. The section clips it via overflow: hidden.
+ */
+.ellipse {
+    position: absolute;
+    left: 50%;
+    width: 2324px;
+    height: 1397px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.18;
+}
+
+.top .ellipse {
+    /* centre sits just below the top edge so the bloom bleeds up and out */
+    top: -908px;
+}
+
+.bottom .ellipse {
+    bottom: -908px;
+}
+
+.orange-ellipse .ellipse {
+    background: var(--c-orange);
+}
+
+.red-ellipse .ellipse {
+    background: var(--c-red);
+}
+
+@media (max-width: 760px) {
+    .ellipse {
+        width: 200vw;
+        height: 130vw;
+    }
+
+    .top .ellipse {
+        top: -55vw;
+    }
+
+    .bottom .ellipse {
+        bottom: -55vw;
+    }
 }

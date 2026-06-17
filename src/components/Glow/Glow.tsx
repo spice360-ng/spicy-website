@@ -2,19 +2,46 @@ import styles from "./Glow.module.scss";
 
 type GlowProps = {
     position?: "top" | "bottom";
-    tone?: "warm" | "cool" | "orange";
+    /**
+     * warm/cool/orange — green-dominant home tones (radial gradients).
+     * amber — About & Work (gold/red/pink). ember — People (orange/red).
+     * orange-ellipse / red-ellipse — the real Figma treatment: a single oversized
+     * #FE5E00 / #BC3431 ellipse (2324×1397) bleeding off one edge, softened with
+     * filter: blur(80px) and clipped by the section's overflow: hidden.
+     */
+    tone?:
+        | "warm"
+        | "cool"
+        | "orange"
+        | "amber"
+        | "ember"
+        | "orange-ellipse"
+        | "red-ellipse";
+    /** Opacity override for the ellipse variants (Figma is ~0.18, People §3 ~0.8). */
+    strength?: number;
 };
 
+const ELLIPSE_TONES = ["orange-ellipse", "red-ellipse"];
+
 /**
- * Reproduces the Figma section glow: a large, soft bloom anchored to one edge that
- * fades to pure black by ~50% into the section (Figma uses big ellipses blurred ~450).
- * Green-dominant so the section stays black, with a coloured rim at the very edge.
+ * Reproduces the Figma section glow. The ellipse variants render an actual oversized
+ * ellipse anchored to one edge and blurred (matching the Figma fills), while the older
+ * radial-gradient tones stay for the home page. Parent section must clip with
+ * overflow: hidden.
  */
-export default function Glow({ position = "bottom", tone = "warm" }: GlowProps) {
+export default function Glow({ position = "bottom", tone = "warm", strength }: GlowProps) {
+    const isEllipse = ELLIPSE_TONES.includes(tone);
     return (
         <div
             className={`${styles.glow} ${styles[position]} ${styles[tone]}`}
             aria-hidden
-        />
+        >
+            {isEllipse && (
+                <span
+                    className={styles.ellipse}
+                    style={strength != null ? { opacity: strength } : undefined}
+                />
+            )}
+        </div>
     );
 }
