@@ -1,0 +1,119 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    flex: 0 0 calc((100% - 32px) / 3);
+    min-height: 455px;
+    padding: 24px;
+    overflow: hidden;
+}
+
+.wide {
+    flex: 0 0 calc((100% - 16px) / 2);
+}
+
+/* Per-card orange glow behind the content (Figma uses an ellipse per card). */
+.cardGlow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(80% 60% at 50% 100%, rgba(254, 94, 0, 0.22) 0%, rgba(254, 94, 0, 0) 70%);
+}
+
+.cardBody {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.number {
+    font-size: var(--fs-pill);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-body);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+.gold {
+    background: var(--c-yellow);
+}
+
+.red {
+    background: var(--c-red);
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+    background-color: var(--c-white);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
+
+.kicker {
+    margin-top: 16px;
+    font-size: var(--fs-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.title {
+    margin-top: 16px;
+    font-size: var(--fs-title);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    color: var(--c-white);
+}
+
+/* Push the body to the bottom of the tall card, as in Figma. */
+.body {
+    margin-top: auto;
+    padding-top: 24px;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 760px) {
+    .grid {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .card,
+    .wide {
+        flex: 1 1 auto;
+        width: 100%;
+        min-height: 0;
+    }
+
+    .body {
+        margin-top: 16px;
+        padding-top: 0;
+    }
+}

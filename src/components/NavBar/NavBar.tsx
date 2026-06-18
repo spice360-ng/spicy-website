@@ -1,5 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 import styles from "./NavBar.module.scss";
 
 const links = [
@@ -9,9 +13,27 @@ const links = [
     { label: "Spice Digital", href: "/spice-digital" },
 ];
 
-export default function NavBar() {
+type NavBarProps = {
+    /** Per-page accent for the CTA and mobile menu (gold on About, red on People). */
+    accent?: "green" | "gold" | "red";
+};
+
+export default function NavBar({ accent = "green" }: NavBarProps) {
+    const [scrolled, setScrolled] = useState(false);
+
+    // Sticky nav gains a frosted background once scrolled off the hero so links stay
+    // readable over the white sections.
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 24);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
-        <header className={styles.nav}>
+        <header
+            className={`${styles.nav} ${styles[accent]} ${scrolled ? styles.scrolled : ""}`}
+        >
             <div className={styles.inner}>
                 <Link href="/" className={styles.logo} aria-label="Spice360 home">
                     <Image
@@ -35,9 +57,7 @@ export default function NavBar() {
                     Get in touch
                 </Link>
 
-                <button className={styles.menu} aria-label="Open menu">
-                    Menu
-                </button>
+                <MobileMenu links={links} accent={accent} />
             </div>
         </header>
     );
