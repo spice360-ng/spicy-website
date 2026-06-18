@@ -1,0 +1,36 @@
+.section {
+    background: var(--c-black);
+    padding: 80px var(--gutter);
+}
+
+.inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 720px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.para {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.45;
+    color: var(--c-white);
+}
+
+@media (max-width: 760px) {
+    .section {
+        padding: 60px 24px;
+    }
+}

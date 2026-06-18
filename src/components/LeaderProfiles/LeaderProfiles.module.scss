@@ -1,0 +1,104 @@
+.section {
+    background: var(--c-white);
+    padding: 80px var(--gutter);
+}
+
+.inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+}
+
+.list {
+    width: 100%;
+    max-width: 730px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    padding: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.gold {
+    background: var(--c-yellow);
+}
+
+.red {
+    background: var(--c-red);
+}
+
+.photo {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.img {
+    object-fit: cover;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.role {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    color: var(--c-white);
+}
+
+.dot,
+.spice {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.name {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    line-height: 1.1;
+    color: var(--c-white);
+}
+
+.tagline {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.bio {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.45;
+    color: var(--c-white);
+}
+
+@media (max-width: 760px) {
+    .section {
+        padding: 60px 24px;
+    }
+
+    .card {
+        gap: 40px;
+    }
+}

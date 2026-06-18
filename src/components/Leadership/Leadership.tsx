@@ -5,13 +5,13 @@ import styles from "./Leadership.module.scss";
 
 const people = [
     {
-        img: "/leadership/biodun.png",
+        img: "/leadership/biodun.jpg",
         role: "Managing Director",
         name: "Biodun Adefila",
         bio: "Former COO at SO&U, AAAN board member, campaigns for Guinness Nigeria, GTBank, and Unilever. She leads the agency's strategy and its expansion across Sub-Saharan Africa.",
     },
     {
-        img: "/leadership/rotimi.png",
+        img: "/leadership/rotimi.jpg",
         role: "Creative Director",
         name: "Rotimi Ade-Onojobi",
         bio: "Over a decade at Livespot, BOGO Beverages, and the Ark Group. The creative direction behind five gold medals on our first time at the table.",
