@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { route } from "@/lib/contact";
 import styles from "./Services.module.scss";
 
 export default function Services() {
@@ -10,7 +11,7 @@ export default function Services() {
                     <h2 className={styles.heading}>
                         The recipe for campaigns that actually works
                     </h2>
-                    <Link href="/services" className={styles.cta}>
+                    <Link href={route("about")} className={styles.cta}>
                         Everything we offer
                     </Link>
                 </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Glow from "@/components/Glow/Glow";
+import { route } from "@/lib/contact";
 import styles from "./SpiceDigital.module.scss";
 
 export default function SpiceDigital() {
@@ -15,7 +16,7 @@ export default function SpiceDigital() {
                     Spice Digital is our dedicated arm for African tech startups. Same
                     creative standards. Different kind of client.
                 </p>
-                <Link href="/spice-digital" className={styles.cta}>
+                <Link href={route("spice-digital")} className={styles.cta}>
                     Explore Spice Digital
                 </Link>
             </div>

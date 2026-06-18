@@ -26,8 +26,8 @@
 }
 
 .logo {
-    height: 26px;
-    width: auto;
+    width: 109px;
+    height: auto;
 }
 
 .col {
@@ -61,22 +61,25 @@
     }
 }
 
-.bottom {
+.legal {
     margin-top: 6rem;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 0.85rem;
+    flex-direction: column;
+    gap: 1.5rem;
     font-size: var(--fs-link);
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-title);
     color: rgba(255, 255, 255, 0.82);
 }
 
-.dot {
-    font-family: var(--font-dm);
-    opacity: 0.7;
+.address {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 @media (max-width: 760px) {
@@ -88,8 +91,7 @@
         flex: 1 1 100%;
     }
 
-    .bottom {
+    .legal {
         margin-top: 4rem;
-        justify-content: flex-start;
     }
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Glow from "@/components/Glow/Glow";
+import { contact, route } from "@/lib/contact";
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
@@ -18,12 +19,17 @@ export default function Hero() {
                         the way. From strategy to execution
                     </p>
                     <div className={styles.actions}>
-                        <Link href="/work" className={styles.primary}>
+                        <Link href={route("about")} className={styles.primary}>
                             See what we&rsquo;ve cooked
                         </Link>
-                        <Link href="/contact" className={styles.secondary}>
+                        <a
+                            href={contact.general}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.secondary}
+                        >
                             Get in touch
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

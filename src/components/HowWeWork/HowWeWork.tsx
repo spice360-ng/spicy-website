@@ -30,9 +30,13 @@ export default function HowWeWork() {
                 <div className={styles.grid}>
                     {pillars.map((p) => (
                         <article key={p.no} className={styles.card}>
-                            <span className={styles.no}>{p.no}</span>
-                            <h3 className={styles.title}>{p.title}</h3>
-                            <p className={styles.body}>{p.body}</p>
+                            <div className={styles.content}>
+                                <span className={styles.no}>{p.no}</span>
+                                <div className={styles.text}>
+                                    <h3 className={styles.title}>{p.title}</h3>
+                                    <p className={styles.body}>{p.body}</p>
+                                </div>
+                            </div>
                         </article>
                     ))}
                 </div>

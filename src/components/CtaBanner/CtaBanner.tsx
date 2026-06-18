@@ -24,9 +24,20 @@ export default function CtaBanner({
             <div className={styles.inner}>
                 <h2 className={styles.heading}>{heading}</h2>
                 <p className={styles.body}>{body}</p>
-                <Link href={button.href} className={styles.button}>
-                    {button.label}
-                </Link>
+                {button.href.startsWith("http") ? (
+                    <a
+                        href={button.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.button}
+                    >
+                        {button.label}
+                    </a>
+                ) : (
+                    <Link href={button.href} className={styles.button}>
+                        {button.label}
+                    </Link>
+                )}
             </div>
         </section>
     );

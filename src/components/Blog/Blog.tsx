@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Glow from "@/components/Glow/Glow";
+import { route } from "@/lib/contact";
 import styles from "./Blog.module.scss";
 
 const secondary = [
@@ -30,7 +31,7 @@ export default function Blog() {
                         We&rsquo;ve gotten the job done countless times, here&rsquo;s how
                         we did some and insights we have to share
                     </p>
-                    <Link href="/blog" className={styles.cta}>
+                    <Link href={route("blog")} className={styles.cta}>
                         More from the kitchen
                     </Link>
                 </header>

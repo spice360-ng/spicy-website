@@ -37,7 +37,7 @@ const items: FeatureItem[] = [
     {
         number: "06",
         kicker: "Sharper insights, faster",
-        title: "AI-Assisted Insights",
+        title: "Digital Content",
         body: "We use AI tools to surface consumer insights, test creative hypotheses, and identify content patterns before committing production budgets. No established Nigerian agency has built this as a named, premium service line. We have. It is a practical advantage in how we work, not a technology pitch.",
     },
 ];

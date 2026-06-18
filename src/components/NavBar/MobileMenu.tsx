@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { contact } from "@/lib/contact";
 import styles from "./MobileMenu.module.scss";
 
 type NavLink = { label: string; href: string };
@@ -66,13 +67,15 @@ export default function MobileMenu({ links, accent = "green" }: MobileMenuProps)
                     })}
                 </nav>
 
-                <Link
-                    href="/contact"
+                <a
+                    href={contact.general}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={styles.cta}
                     onClick={() => setOpen(false)}
                 >
                     Get in touch
-                </Link>
+                </a>
             </div>
         </div>
     );

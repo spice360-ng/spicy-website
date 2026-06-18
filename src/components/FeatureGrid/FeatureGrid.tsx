@@ -36,25 +36,31 @@ export default function FeatureGrid({ items, wideFrom, accent = "gold" }: Featur
                     >
                         <span className={styles.cardGlow} aria-hidden />
                         <div className={styles.cardBody}>
-                            {item.icon ? (
-                                <span className={`${styles.chip} ${styles[accent]}`}>
-                                    <span
-                                        className={styles.icon}
-                                        style={{
-                                            maskImage: `url(${item.icon})`,
-                                            WebkitMaskImage: `url(${item.icon})`,
-                                        }}
-                                        aria-hidden
-                                    />
-                                </span>
-                            ) : (
-                                <span className={styles.number}>{item.number}</span>
-                            )}
-                            {item.kicker && (
-                                <p className={styles.kicker}>{item.kicker}</p>
-                            )}
-                            <h3 className={styles.title}>{item.title}</h3>
-                            <p className={styles.body}>{item.body}</p>
+                            <div className={styles.top}>
+                                {item.icon ? (
+                                    <span className={`${styles.iconChip} ${styles[accent]}`}>
+                                        <span
+                                            className={styles.icon}
+                                            style={{
+                                                maskImage: `url(${item.icon})`,
+                                                WebkitMaskImage: `url(${item.icon})`,
+                                            }}
+                                            aria-hidden
+                                        />
+                                    </span>
+                                ) : (
+                                    <span className={`${styles.numberChip} ${styles[accent]}`}>
+                                        {item.number}
+                                    </span>
+                                )}
+                                {item.kicker && (
+                                    <p className={styles.kicker}>{item.kicker}</p>
+                                )}
+                            </div>
+                            <div className={styles.bottom}>
+                                <h3 className={styles.title}>{item.title}</h3>
+                                <p className={styles.body}>{item.body}</p>
+                            </div>
                         </div>
                     </article>
                 );
