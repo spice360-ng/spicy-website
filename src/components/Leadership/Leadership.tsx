@@ -21,7 +21,7 @@ const people = [
 export default function Leadership() {
     return (
         <section className={styles.section}>
-            <Glow position="bottom" tone="warm" />
+            <Glow position="bottom" tone="warm" scale={2} />
             <div className={styles.inner}>
                 <div className={styles.head}>
                     <p className={styles.eyebrow}>Leadership</p>

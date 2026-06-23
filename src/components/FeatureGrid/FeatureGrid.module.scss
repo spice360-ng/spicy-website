@@ -8,7 +8,7 @@
 .card {
     position: relative;
     flex: 0 0 calc((100% - 32px) / 3);
-    min-height: 455px;
+    min-height: 503px;
     padding: 24px;
     overflow: hidden;
 }
@@ -25,24 +25,50 @@
     pointer-events: none;
     background:
         radial-gradient(80% 60% at 50% 100%, rgba(254, 94, 0, 0.22) 0%, rgba(254, 94, 0, 0) 70%);
+    /* scale (default 1) enlarges the bloom from the card's bottom edge — see `glowScale` */
+    transform: scale(var(--card-glow-scale, 1));
+    transform-origin: bottom center;
 }
 
+/* Two groups pushed apart: [chip + kicker] at top, [title + body] at bottom (Figma). */
 .cardBody {
     position: relative;
     z-index: 1;
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
 }
 
-.number {
-    font-size: var(--fs-pill);
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Number chip: filled accent square with a white numeral (Figma #EEA953 / white, 25px). */
+.numberChip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    border-radius: 0;
+    font-size: var(--fs-pillar);
     font-weight: var(--fw-semibold);
-    letter-spacing: var(--ls-body);
-    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--c-white);
 }
 
-.chip {
+.iconChip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -72,31 +98,27 @@
 }
 
 .kicker {
-    margin-top: 16px;
     font-size: var(--fs-label);
     font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-label);
-    line-height: 1.2;
-    color: rgba(255, 255, 255, 0.78);
-}
-
-.title {
-    margin-top: 16px;
-    font-size: var(--fs-title);
-    font-weight: var(--fw-semibold);
-    letter-spacing: var(--ls-title);
+    line-height: 18px;
     color: var(--c-white);
 }
 
-/* Push the body to the bottom of the tall card, as in Figma. */
+.title {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    line-height: 28px;
+    color: var(--c-white);
+}
+
 .body {
-    margin-top: auto;
-    padding-top: 24px;
     font-size: var(--fs-body);
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-body);
-    line-height: 1.35;
-    color: rgba(255, 255, 255, 0.75);
+    line-height: 20px;
+    color: var(--c-white);
 }
 
 @media (max-width: 760px) {

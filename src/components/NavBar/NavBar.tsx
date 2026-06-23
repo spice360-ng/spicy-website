@@ -4,18 +4,19 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
+import { contact, route } from "@/lib/contact";
 import styles from "./NavBar.module.scss";
 
 const links = [
-    { label: "Home", href: "/" },
-    { label: "About & Work", href: "/about" },
-    { label: "People", href: "/people" },
-    { label: "Spice Digital", href: "/spice-digital" },
+    { label: "Home", href: route("home") },
+    { label: "About & Work", href: route("about") },
+    { label: "People", href: route("people") },
+    { label: "Spice Digital", href: route("spice-digital") },
 ];
 
 type NavBarProps = {
-    /** Per-page accent for the CTA and mobile menu (gold on About, red on People). */
-    accent?: "green" | "gold" | "red";
+    /** Per-page accent for the CTA and mobile menu (gold on About, red on People, blue on Spice Digital). */
+    accent?: "green" | "gold" | "red" | "blue";
 };
 
 export default function NavBar({ accent = "green" }: NavBarProps) {
@@ -53,9 +54,14 @@ export default function NavBar({ accent = "green" }: NavBarProps) {
                     ))}
                 </nav>
 
-                <Link href="/contact" className={styles.cta}>
+                <a
+                    href={contact.general}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.cta}
+                >
                     Get in touch
-                </Link>
+                </a>
 
                 <MobileMenu links={links} accent={accent} />
             </div>

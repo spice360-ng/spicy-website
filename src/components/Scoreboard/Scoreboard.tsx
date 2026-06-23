@@ -13,7 +13,7 @@ const stats = [
 export default function Scoreboard() {
     return (
         <section className={styles.section}>
-            <Glow position="bottom" tone="warm" />
+            <Glow position="bottom" tone="warm" scale={2} />
             <div className={styles.inner}>
                 <p className={styles.eyebrow}>Awards &amp; Accolades</p>
                 <h2 className={styles.heading}>The scoreboard</h2>

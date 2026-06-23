@@ -12,22 +12,29 @@
     margin: 0 auto;
 }
 
+/* 1fr auto 1fr keeps the middle Company column truly centred in the footer width,
+   with the brand block flush left and Legal & Info flush right. */
 .top {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
     gap: 2rem;
-    flex-wrap: wrap;
 }
 
 .brand {
+    justify-self: start;
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
 }
 
+.top .col:last-of-type {
+    justify-self: end;
+}
+
 .logo {
-    height: 26px;
-    width: auto;
+    width: 109px;
+    height: auto;
 }
 
 .col {
@@ -61,35 +68,36 @@
     }
 }
 
-.bottom {
+/* One centred line of three spans, evenly spaced — no interpuncts, readable on every
+   page's glow. (Figma 372:1493 and the About / People footers all share this row.) */
+.legal {
     margin-top: 6rem;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 0.85rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 2.5rem;
     font-size: var(--fs-link);
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-title);
     color: rgba(255, 255, 255, 0.82);
-}
-
-.dot {
-    font-family: var(--font-dm);
-    opacity: 0.7;
+    text-align: center;
 }
 
 @media (max-width: 760px) {
     .top {
+        grid-template-columns: 1fr;
         gap: 2.5rem;
     }
 
-    .brand {
-        flex: 1 1 100%;
+    .brand,
+    .top .col:last-of-type {
+        justify-self: start;
     }
 
-    .bottom {
+    .legal {
         margin-top: 4rem;
         justify-content: flex-start;
+        text-align: left;
     }
 }

@@ -38,49 +38,61 @@
 
 .card {
     position: relative;
-    min-height: 320px;
-    padding: 2rem;
+    min-height: 411px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end; /* content sits at the bottom of the card (Figma) */
     background:
-        radial-gradient(120% 80% at 0% 0%, rgba(105, 206, 125, 0.35), transparent 55%),
+        radial-gradient(120% 80% at 0% 100%, rgba(105, 206, 125, 0.35), transparent 55%),
         linear-gradient(180deg, #2e5e37 0%, #16301d 48%, #0a160e 100%);
     overflow: hidden;
 }
 
+/* chip + (title + body), 24px apart */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Number chip: solid dark-green with a white numeral (Figma #2B5833 / white). */
 .no {
-    align-self: flex-start;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 2.4rem;
-    height: 2.4rem;
-    padding: 0 0.5rem;
-    border-radius: 8px;
-    background: rgba(227, 252, 106, 0.16);
-    color: var(--c-lime);
+    padding: 8px 10px;
+    border-radius: 0;
+    background: var(--c-green-dark);
+    color: var(--c-white);
     font-size: var(--fs-pillar);
     font-weight: var(--fw-semibold);
     letter-spacing: -0.03em;
+    line-height: 1;
 }
 
 .title {
-    margin-top: auto;
-    padding-top: 5rem;
     font-size: var(--fs-title);
     font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-title);
+    line-height: 28px;
     color: var(--c-white);
 }
 
 .body {
-    margin-top: 0.75rem;
     font-size: var(--fs-body);
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-body);
-    line-height: 1.4;
-    color: var(--c-muted-on-dark);
-    max-width: 26ch;
+    line-height: 20px;
+    color: var(--c-white);
+    max-width: 273px;
 }
 
 @media (max-width: 760px) {

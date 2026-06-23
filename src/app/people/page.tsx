@@ -7,6 +7,7 @@ import Values from "@/components/Values/Values";
 import CultureSystem from "@/components/CultureSystem/CultureSystem";
 import CtaBanner from "@/components/CtaBanner/CtaBanner";
 import Footer from "@/components/Footer/Footer";
+import { contact } from "@/lib/contact";
 
 export const metadata: Metadata = {
     title: "People — Spice360",
@@ -33,10 +34,10 @@ export default function PeoplePage() {
                     accent="red"
                     heading="There is probably a spice name with your character written into it."
                     body="Spice 360 hires people who are curious, specific, and allergic to lukewarm work. If that describes you, and if you have work that proves it, we want to hear from you. Send your portfolio and a short note about what you believe."
-                    button={{ label: "Get in touch", href: "/contact" }}
+                    button={{ label: "Get in touch", href: contact.apply }}
                 />
             </main>
-            <Footer />
+            <Footer page="people" />
         </>
     );
 }

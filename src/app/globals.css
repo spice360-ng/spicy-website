@@ -14,6 +14,13 @@
     --c-red:          #BC3431;   /* Integrated Campaigns block, People glow */
     --c-orange:       #FE5E00;   /* About & Work section glow ellipse */
 
+    /* Spice Digital — blue-dawn palette (indigo → cyan → mint glow stack) */
+    --c-blue-deep:    #212a68;   /* primary button, Spice Digital compare card, glow base */
+    --c-cyan:         #7BDCFB;   /* eyebrow labels, glow mid */
+    --c-mint:         #D7FDE3;   /* glow highlight */
+    --c-blue-soft:    #E8EEFF;   /* light secondary button bg */
+    --c-blue-ink:     #0F2A8A;   /* light secondary button text */
+
     --c-muted:        #898983;   /* muted body on light */
     --c-muted-on-dark: rgba(255, 255, 255, 0.62);
     --c-border-dark:  rgba(255, 255, 255, 0.12);

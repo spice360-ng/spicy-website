@@ -9,6 +9,7 @@ import BrandsStrip from "@/components/BrandsStrip/BrandsStrip";
 import ProcessSteps from "@/components/ProcessSteps/ProcessSteps";
 import CtaBanner from "@/components/CtaBanner/CtaBanner";
 import Footer from "@/components/Footer/Footer";
+import { contact } from "@/lib/contact";
 
 export const metadata: Metadata = {
     title: "About & Work — Spice360",
@@ -38,10 +39,10 @@ export default function AboutPage() {
                     accent="gold"
                     heading="Start a conversation"
                     body="Tell us what your brand is trying to do and leave the rest to us"
-                    button={{ label: "Brief us", href: "/contact" }}
+                    button={{ label: "Brief us", href: contact.work }}
                 />
             </main>
-            <Footer />
+            <Footer page="about" />
         </>
     );
 }

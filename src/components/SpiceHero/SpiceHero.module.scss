@@ -1,0 +1,82 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--c-black);
+    min-height: 802px;
+    padding: 200px var(--gutter) 80px;
+}
+
+.inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container);
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: var(--fs-display);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-display);
+    line-height: 0.94;
+    color: var(--c-white);
+}
+
+.foot {
+    margin-top: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.intro {
+    width: 584px;
+    max-width: 100%;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.35;
+    color: var(--c-white);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: var(--radius);
+    background: var(--c-blue-deep);
+    color: var(--c-off-white);
+    font-size: var(--fs-pill);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-body);
+    transition: filter 0.2s;
+
+    &:hover {
+        filter: brightness(1.18);
+    }
+}
+
+@media (max-width: 760px) {
+    .hero {
+        min-height: 779px;
+        padding: 150px 24px 60px;
+    }
+
+    .title {
+        max-width: 354px;
+    }
+
+    .foot {
+        margin-top: 200px;
+    }
+
+    .intro {
+        width: 354px;
+    }
+}

@@ -1,26 +1,46 @@
 import Image from "next/image";
 import Link from "next/link";
 import Glow from "@/components/Glow/Glow";
+import { contact, route, type ContactKind } from "@/lib/contact";
 import styles from "./Footer.module.scss";
 
-const primary = [
-    { label: "Home", href: "/" },
-    { label: "About & Work", href: "/about" },
-    { label: "Awards", href: "/awards" },
-    { label: "Blog", href: "/blog" },
-];
+type GlowTone = "warm" | "cool" | "blue-dawn" | "orange-ellipse" | "red-ellipse";
 
-const company = [
-    { label: "People", href: "/people" },
-    { label: "Careers", href: "/careers" },
-    { label: "Spice Digital", href: "/spice-digital" },
-    { label: "Get in touch", href: "/contact" },
-];
+type FooterProps = {
+    /** Page the footer sits on — drives the glow colour and the "Get in touch" message. */
+    page?: "home" | "about" | "people" | "spice-digital";
+};
 
-export default function Footer() {
+const PAGE: Record<
+    NonNullable<FooterProps["page"]>,
+    { glow: GlowTone; contact: ContactKind }
+> = {
+    home: { glow: "cool", contact: "general" },
+    about: { glow: "orange-ellipse", contact: "work" },
+    people: { glow: "red-ellipse", contact: "apply" },
+    "spice-digital": { glow: "blue-dawn", contact: "brief" },
+};
+
+export default function Footer({ page = "home" }: FooterProps) {
+    const cfg = PAGE[page];
+
+    // href values resolve to routes that exist today (see lib/contact).
+    const primary = [
+        { label: "Home", href: route("home") },
+        { label: "About & Work", href: route("about") },
+        { label: "Awards", href: route("awards") },
+        { label: "Blog", href: route("blog") },
+    ];
+
+    const company = [
+        { label: "People", href: route("people") },
+        { label: "Careers", href: route("careers") },
+        { label: "Spice Digital", href: route("spice-digital") },
+    ];
+
     return (
         <footer className={styles.footer}>
-            <Glow position="bottom" tone="cool" />
+            <Glow position="bottom" tone={cfg.glow} strength={0.5} />
             <div className={styles.inner}>
                 <div className={styles.top}>
                     <div className={styles.brand}>
@@ -52,6 +72,16 @@ export default function Footer() {
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <a
+                                    href={contact[cfg.contact]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.link}
+                                >
+                                    Get in touch
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
@@ -59,7 +89,7 @@ export default function Footer() {
                         <p className={styles.colHead}>Legal &amp; Info</p>
                         <ul className={styles.list}>
                             <li>
-                                <Link href="/privacy" className={styles.link}>
+                                <Link href={route("privacy")} className={styles.link}>
                                     Privacy Policy
                                 </Link>
                             </li>
@@ -67,11 +97,9 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className={styles.bottom}>
+                <div className={styles.legal}>
                     <span>&copy; 2026 Spice 360</span>
-                    <span className={styles.dot}>&middot;</span>
                     <span>AAN Member</span>
-                    <span className={styles.dot}>&middot;</span>
                     <span>1 Akanbi Onitiri Street, Surulere, Lagos</span>
                 </div>
             </div>

@@ -4,6 +4,16 @@
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
+    /* scale (default 1) enlarges the bloom from its anchored edge — see the `scale` prop */
+    transform: scale(var(--glow-scale, 1));
+}
+
+.top {
+    transform-origin: top center;
+}
+
+.bottom {
+    transform-origin: bottom center;
 }
 
 /*
@@ -46,6 +56,14 @@
         radial-gradient(95% 64% at 50% -4%, rgba(188, 52, 49, 0.34) 0%, rgba(188, 52, 49, 0) 64%);
 }
 
+/* Spice Digital — indigo / cyan / mint dawn (#212A68, #7BDCFB, #D7FDE3) */
+.top.blue-dawn {
+    background:
+        radial-gradient(125% 92% at 50% -4%, rgba(33, 42, 104, 0.85) 0%, rgba(33, 42, 104, 0) 70%),
+        radial-gradient(95% 64% at 50% -4%, rgba(123, 220, 251, 0.30) 0%, rgba(123, 220, 251, 0) 64%),
+        radial-gradient(68% 44% at 50% -4%, rgba(215, 253, 227, 0.16) 0%, rgba(215, 253, 227, 0) 58%);
+}
+
 /* ---------- Bottom-anchored ---------- */
 .bottom.warm {
     background:
@@ -76,6 +94,14 @@
     background:
         radial-gradient(125% 92% at 50% 104%, rgba(254, 94, 0, 0.55) 0%, rgba(254, 94, 0, 0) 70%),
         radial-gradient(95% 64% at 50% 104%, rgba(188, 52, 49, 0.34) 0%, rgba(188, 52, 49, 0) 64%);
+}
+
+/* Spice Digital — brighter at the foot: cyan/mint rising over the indigo base. */
+.bottom.blue-dawn {
+    background:
+        radial-gradient(128% 96% at 50% 108%, rgba(33, 42, 104, 0.92) 0%, rgba(33, 42, 104, 0) 70%),
+        radial-gradient(104% 70% at 50% 110%, rgba(123, 220, 251, 0.46) 0%, rgba(123, 220, 251, 0) 64%),
+        radial-gradient(74% 48% at 50% 112%, rgba(215, 253, 227, 0.30) 0%, rgba(215, 253, 227, 0) 58%);
 }
 
 /*
