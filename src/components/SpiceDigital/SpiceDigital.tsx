@@ -6,7 +6,7 @@ import styles from "./SpiceDigital.module.scss";
 export default function SpiceDigital() {
     return (
         <section className={styles.section}>
-            <Glow position="bottom" tone="cool" />
+            <Glow position="top" tone="cool" />
             <div className={styles.inner}>
                 <p className={styles.eyebrow}>A Spice360 sub-brand</p>
                 <h2 className={styles.heading}>

@@ -1,4 +1,3 @@
-import Glow from "@/components/Glow/Glow";
 import styles from "./HowWeWork.module.scss";
 
 const pillars = [
@@ -22,7 +21,6 @@ const pillars = [
 export default function HowWeWork() {
     return (
         <section className={styles.section}>
-            <Glow position="bottom" tone="warm" />
             <div className={styles.inner}>
                 <p className={styles.eyebrow}>Our three pillars</p>
                 <h2 className={styles.heading}>How we work</h2>

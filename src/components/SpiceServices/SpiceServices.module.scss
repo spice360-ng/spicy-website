@@ -1,0 +1,93 @@
+.section {
+    position: relative;
+    background: var(--c-black);
+    padding: 120px var(--gutter) 80px;
+}
+
+.inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    flex: 0 0 calc((100% - 32px) / 3);
+    min-height: 380px;
+    padding: 24px;
+    overflow: hidden;
+}
+
+/* Per-card indigo bloom behind the content (Figma stacks an ellipse per card). */
+.cardGlow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(85% 62% at 28% 96%, rgba(33, 42, 104, 0.95) 0%, rgba(33, 42, 104, 0) 72%),
+        radial-gradient(64% 46% at 24% 100%, rgba(123, 220, 251, 0.32) 0%, rgba(123, 220, 251, 0) 64%);
+}
+
+/* Title pinned top, body pinned bottom (Figma content frame uses space-between). */
+.cardBody {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    min-height: 332px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.title {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    line-height: 1.1;
+    color: var(--c-white);
+    max-width: 14ch;
+}
+
+.body {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.2;
+    color: var(--c-white);
+}
+
+@media (max-width: 760px) {
+    .section {
+        padding: 80px 24px 56px;
+    }
+
+    .inner {
+        gap: 48px;
+    }
+
+    .grid {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 auto;
+        width: 100%;
+        min-height: 0;
+    }
+
+    .cardBody {
+        min-height: 0;
+        gap: 16px;
+    }
+}

@@ -11,7 +11,7 @@ type NavLink = { label: string; href: string };
 
 type MobileMenuProps = {
     links: NavLink[];
-    accent?: "green" | "gold" | "red";
+    accent?: "green" | "gold" | "red" | "blue";
 };
 
 /**

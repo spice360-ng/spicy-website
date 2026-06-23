@@ -15,6 +15,10 @@
     --accent: var(--c-red);
 }
 
+.blue {
+    --accent: var(--c-blue-deep);
+}
+
 .trigger {
     position: relative;
     z-index: 110;
@@ -46,6 +50,8 @@
     padding: 76px 16px 16px;
     visibility: hidden;
     pointer-events: none;
+    /* visibility (not opacity) gates the menu so we never cross-fade the blurred panel;
+       the delay lets the panel's slide-out transform finish before it hides. */
     transition: visibility 0.26s ease;
 }
 
@@ -58,6 +64,12 @@
     width: min(336px, 100%);
     padding: 28px 33px;
     border-radius: 16px;
+    /*
+     * Dark frosted glass. The panel stays fully opaque and only TRANSFORMS in/out — we
+     * never fade a backdrop-filtered layer, because animating opacity on a blur forces
+     * the browser to re-sample and re-blur the whole page every frame (the source of the
+     * toggle lag). Blur kept at 16px and the panel promoted to its own compositor layer.
+     */
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%),
         rgba(12, 16, 13, 0.72);

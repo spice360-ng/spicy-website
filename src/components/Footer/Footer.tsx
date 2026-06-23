@@ -4,10 +4,11 @@ import Glow from "@/components/Glow/Glow";
 import { contact, route, type ContactKind } from "@/lib/contact";
 import styles from "./Footer.module.scss";
 
-type GlowTone = "warm" | "cool" | "orange-ellipse" | "red-ellipse";
+type GlowTone = "warm" | "cool" | "blue-dawn" | "orange-ellipse" | "red-ellipse";
 
 type FooterProps = {
-    page?: "home" | "about" | "people";
+    /** Page the footer sits on — drives the glow colour and the "Get in touch" message. */
+    page?: "home" | "about" | "people" | "spice-digital";
 };
 
 const PAGE: Record<
@@ -17,11 +18,13 @@ const PAGE: Record<
     home: { glow: "cool", contact: "general" },
     about: { glow: "orange-ellipse", contact: "work" },
     people: { glow: "red-ellipse", contact: "apply" },
+    "spice-digital": { glow: "blue-dawn", contact: "brief" },
 };
 
 export default function Footer({ page = "home" }: FooterProps) {
     const cfg = PAGE[page];
 
+    // href values resolve to routes that exist today (see lib/contact).
     const primary = [
         { label: "Home", href: route("home") },
         { label: "About & Work", href: route("about") },
@@ -31,6 +34,7 @@ export default function Footer({ page = "home" }: FooterProps) {
 
     const company = [
         { label: "People", href: route("people") },
+        { label: "Careers", href: route("careers") },
         { label: "Spice Digital", href: route("spice-digital") },
     ];
 
@@ -94,13 +98,9 @@ export default function Footer({ page = "home" }: FooterProps) {
                 </div>
 
                 <div className={styles.legal}>
-                    <p className={styles.address}>
-                        1 Akanbi Onitiri Street, Surulere, Lagos
-                    </p>
-                    <div className={styles.meta}>
-                        <span>AAN Member</span>
-                        <span>&copy; 2026 Spice 360</span>
-                    </div>
+                    <span>&copy; 2026 Spice 360</span>
+                    <span>AAN Member</span>
+                    <span>1 Akanbi Onitiri Street, Surulere, Lagos</span>
                 </div>
             </div>
         </footer>

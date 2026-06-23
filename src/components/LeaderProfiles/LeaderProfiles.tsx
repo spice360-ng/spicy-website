@@ -60,7 +60,7 @@ export default function LeaderProfiles() {
                             <div className={styles.detail}>
                                 <p className={styles.role}>
                                     {l.role}
-                                    <span className={styles.dot}>·</span>
+                                    <span className={styles.dot} aria-hidden />
                                     <span className={styles.spice}>{l.spice}</span>
                                 </p>
                                 <h3 className={styles.name}>{l.name}</h3>

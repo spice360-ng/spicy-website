@@ -5,8 +5,8 @@ type SectionHeadProps = {
     heading: string;
     subcopy?: string;
     align?: "center" | "left";
-    /** Eyebrow colour: gold (About dark), red (People dark), muted (white), green. */
-    tone?: "gold" | "red" | "muted" | "green";
+    /** Eyebrow colour: gold (About dark), red (People dark), muted (white), green, cyan (Spice Digital). */
+    tone?: "gold" | "red" | "muted" | "green" | "cyan";
     /** dark = white text on black; light = near-black text on white sections. */
     surface?: "dark" | "light";
 };

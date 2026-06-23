@@ -1,0 +1,133 @@
+.section {
+    position: relative;
+    background: var(--c-black);
+    padding: 100px var(--gutter) 80px;
+}
+
+.inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+}
+
+.grid {
+    width: 1150px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 571 / 581;
+}
+
+.row .card {
+    flex: 1 1 0;
+}
+
+.wide {
+    aspect-ratio: 1150 / 581;
+}
+
+.photo {
+    object-fit: cover;
+}
+
+/* Darkened scrim so the white caption text stays legible over photography. */
+.scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.05) 32%,
+        rgba(0, 0, 0, 0.55) 100%
+    );
+}
+
+.caption {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--fs-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    color: var(--c-white);
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.brand {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    line-height: 1.05;
+    color: var(--c-white);
+}
+
+.metric {
+    font-size: var(--fs-label);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.25;
+    color: var(--c-white);
+    max-width: 40ch;
+}
+
+@media (max-width: 760px) {
+    .section {
+        padding: 64px 24px 56px;
+    }
+
+    .inner {
+        gap: 40px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .card {
+        aspect-ratio: 4 / 3;
+    }
+
+    .wide {
+        aspect-ratio: 4 / 3;
+    }
+
+    .caption {
+        padding: 24px;
+    }
+}

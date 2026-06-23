@@ -34,6 +34,11 @@ export const contact = {
         subject: "Application — Spice360",
         body: "Hello Spice360, I'd like to apply. Here's a bit about me and a link to my portfolio: ",
     }),
+    /** Spice Digital — a founder briefing the studio on what they're building. */
+    brief: gmailCompose({
+        subject: "Brief — Spice Digital",
+        body: "Hello Spice Digital, here's what we're building: ",
+    }),
 } as const;
 
 export type ContactKind = keyof typeof contact;
@@ -49,7 +54,8 @@ const ROUTES: Record<string, string> = {
     people: "/people",
     awards: "/about", // Awards lives on the About & Work page for now
     blog: "/",
-    "spice-digital": "/",
+    "spice-digital": "/spice-digital",
+    careers: "/people", // Careers lives on the People page for now
     privacy: "/",
 };
 

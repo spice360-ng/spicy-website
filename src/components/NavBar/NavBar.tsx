@@ -15,8 +15,8 @@ const links = [
 ];
 
 type NavBarProps = {
-    /** Per-page accent for the CTA and mobile menu (gold on About, red on People). */
-    accent?: "green" | "gold" | "red";
+    /** Per-page accent for the CTA and mobile menu (gold on About, red on People, blue on Spice Digital). */
+    accent?: "green" | "gold" | "red" | "blue";
 };
 
 export default function NavBar({ accent = "green" }: NavBarProps) {

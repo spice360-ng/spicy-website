@@ -64,9 +64,16 @@
     color: var(--c-white);
 }
 
-.dot,
 .spice {
     color: rgba(255, 255, 255, 0.8);
+}
+
+/* Small drawn dot between role and spice name (no interpunct glyph). */
+.dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .name {
@@ -101,6 +108,8 @@
     .card {
         gap: 40px;
     }
+
+    .tagline,
     .bio {
         font-size: 13.5px;
         line-height: 1.375;

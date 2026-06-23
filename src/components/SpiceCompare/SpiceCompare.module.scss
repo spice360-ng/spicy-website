@@ -1,0 +1,101 @@
+.section {
+    position: relative;
+    background: var(--c-white);
+    padding: 80px var(--gutter);
+}
+
+.inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+}
+
+/* Two equal cards sharing an edge — one green, one indigo (Figma 339×300, flush). */
+.cards {
+    display: flex;
+    width: 678px;
+    max-width: 100%;
+}
+
+.card {
+    flex: 1 1 0;
+    min-height: 300px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.green {
+    background: var(--c-green-dark);
+}
+
+.blue {
+    background: var(--c-blue-deep);
+}
+
+.cardTitle {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    line-height: 1.05;
+    color: var(--c-white);
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+        position: relative;
+        padding-left: 18px;
+        font-size: var(--fs-body);
+        font-weight: var(--fw-medium);
+        letter-spacing: var(--ls-body);
+        line-height: 1.25;
+        color: var(--c-white);
+    }
+
+    li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 0.55em;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: currentColor;
+    }
+}
+
+.closer {
+    width: 640px;
+    max-width: 100%;
+    text-align: center;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.4;
+    color: var(--c-muted);
+}
+
+@media (max-width: 760px) {
+    .section {
+        padding: 56px 24px;
+    }
+
+    .inner {
+        gap: 40px;
+    }
+
+    .cards {
+        flex-direction: column;
+        width: 100%;
+    }
+}
