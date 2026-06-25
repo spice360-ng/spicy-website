@@ -6,6 +6,18 @@
     padding: 200px var(--gutter) 80px;
 }
 
+.bg {
+    object-fit: cover;
+    z-index: 0;
+}
+
+.scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.58);
+}
+
 .inner {
     position: relative;
     z-index: 1;

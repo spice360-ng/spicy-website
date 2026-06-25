@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import Glow from "@/components/Glow/Glow";
+import Slideshow from "@/components/Slideshow/Slideshow";
 import { contact, route, type ContactKind } from "@/lib/contact";
+import { FUN_SLIDES } from "@/data/groupPhotos";
 import styles from "./Footer.module.scss";
 
 type GlowTone = "warm" | "cool" | "blue-dawn" | "orange-ellipse" | "red-ellipse";
@@ -40,6 +42,12 @@ export default function Footer({ page = "home" }: FooterProps) {
 
     return (
         <footer className={styles.footer}>
+            {page === "people" && (
+                <>
+                    <Slideshow images={FUN_SLIDES} className={styles.bg} />
+                    <div className={styles.scrim} aria-hidden />
+                </>
+            )}
             <Glow position="bottom" tone={cfg.glow} strength={0.5} />
             <div className={styles.inner}>
                 <div className={styles.top}>

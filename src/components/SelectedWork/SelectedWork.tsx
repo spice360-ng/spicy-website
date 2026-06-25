@@ -33,7 +33,7 @@ export default function SelectedWork() {
                     <div className={styles.media}>
                         <Image
                             src="/blog/indomie-feature.png"
-                            alt="Indomie 'Mother's Love' campaign"
+                            alt="Indomie ‘Mother’s Love’ campaign"
                             fill
                             sizes="(max-width: 760px) 100vw, 415px"
                             className={styles.photo}

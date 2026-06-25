@@ -1,0 +1,36 @@
+// Section styles for the About page's brands strip — copied verbatim from the
+// former BrandsStrip.module.scss (marquee mechanics now live in BrandsMarquee).
+
+.brands {
+    background: var(--c-white);
+    padding: 80px var(--gutter);
+}
+
+.brandsPanel {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.brandsFootnote {
+    max-width: 861px;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-body);
+    line-height: 1.35;
+    color: var(--c-muted);
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .brands {
+        padding: 60px 24px;
+    }
+
+    .brandsPanel {
+        gap: 40px;
+    }
+}

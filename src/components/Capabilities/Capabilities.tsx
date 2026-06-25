@@ -8,19 +8,19 @@ const items: FeatureItem[] = [
         number: "01",
         kicker: "Stories people actually care about",
         title: "Film and TV Production",
-        body: "In a market where attention is the scarcest resource, the campaigns that build brands over time are the ones that earn it. We produce TV commercials, digital films, and video campaigns from brief to final cut. The 2022 Indomie 'Mother's Love' campaign, directed by Jay Bhansali of KKDD Films, earned global recognition on Ads of the World. That is the standard we work against.",
+        body: "In a market where attention is the scarcest resource, the campaigns that build brands over time are the ones that earn it. We produce TV commercials, digital films, and video campaigns from brief to final cut. The 2022 Indomie ‘Mother’s Love’ campaign, directed by Jay Bhansali of KKDD Films, earned global recognition on Ads of the World. That is the standard we work against.",
     },
     {
         number: "02",
         kicker: "The conviction before the campaign",
         title: "Brand Strategy",
-        body: "Naming, visual identity, brand voice, and positioning for brands that want to own a corner of the market. Before a line of copy is written, we work out what the brand actually believes and whether that belief will move the people it's made for. The insight driving any campaign worth making is almost always found in this stage.",
+        body: "Naming, visual identity, brand voice, and positioning for brands that want to own a corner of the market. Before a line of copy is written, we work out what the brand actually believes and whether that belief will move the people it’s made for. The insight driving any campaign worth making is almost always found in this stage.",
     },
     {
         number: "03",
         kicker: "Built for the speed of this culture",
         title: "Digital Content",
-        body: "Always-on content strategies and social media campaigns for brands navigating Africa's most active online market. We write and design for Nigerian audiences, not for global templates adapted downward. The difference shows up in the engagement numbers.",
+        body: "Always-on content strategies and social media campaigns for brands navigating Africa’s most active online market. We write and design for Nigerian audiences, not for global templates adapted downward. The difference shows up in the engagement numbers.",
     },
     {
         number: "04",

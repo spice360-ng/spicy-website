@@ -1,0 +1,41 @@
+// Shared SCSS mixins — values extracted verbatim from the original component
+// module files. No new values: each property below already existed identically
+// across the section modules (Hero, Leadership, Blog, SectionHead, etc.).
+
+// Dark, clipped section shell — the outer <section> of every black band.
+@mixin dark-section {
+    position: relative;
+    overflow: hidden;
+    background: var(--c-black);
+}
+
+// Centred content column inside a section, lifted above background glows.
+@mixin inner-container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+// Eyebrow / kicker label. Colour is per-section (green-bright, yellow, muted…).
+@mixin eyebrow($color) {
+    font-size: var(--fs-label);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-label);
+    color: $color;
+}
+
+// Pill CTA button. Background and foreground vary per surface.
+@mixin cta-button($bg, $fg) {
+    display: inline-flex;
+    align-items: center;
+    height: 46px;
+    padding: 0 1.25rem;
+    border-radius: 8px;
+    background: $bg;
+    color: $fg;
+    font-size: var(--fs-pill);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-title);
+    transition: filter 0.2s, opacity 0.2s;
+}

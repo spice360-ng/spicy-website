@@ -1,0 +1,71 @@
+.gallery {
+    margin-top: 3.5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    align-items: center;
+}
+
+.tile {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    opacity: 0;
+}
+
+/* "up" tiles sit a little raised and enter from below; "down" tiles sit a little
+   lowered and enter from above. */
+.up {
+    margin-bottom: 1.75rem;
+}
+
+.down {
+    margin-top: 1.75rem;
+}
+
+/* Entrance plays only once the section is in view (the `run` class), per set. */
+.run.up {
+    animation: funUp 500ms ease forwards;
+}
+
+.run.down {
+    animation: funDown 500ms ease forwards;
+}
+
+@keyframes funUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes funDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.photo {
+    object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tile {
+        opacity: 1;
+        animation: none !important;
+        transform: none;
+    }
+}
+
+@media (max-width: 760px) {
+    .gallery {
+        gap: 0.5rem;
+    }
+
+    .up {
+        margin-bottom: 0.75rem;
+    }
+
+    .down {
+        margin-top: 0.75rem;
+    }
+}

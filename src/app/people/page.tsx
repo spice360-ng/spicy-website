@@ -8,6 +8,7 @@ import CultureSystem from "@/components/CultureSystem/CultureSystem";
 import CtaBanner from "@/components/CtaBanner/CtaBanner";
 import Footer from "@/components/Footer/Footer";
 import { contact } from "@/lib/contact";
+import { PEOPLE_LANDING_BG } from "@/data/groupPhotos";
 
 export const metadata: Metadata = {
     title: "People — Spice360",
@@ -22,6 +23,7 @@ export default function PeoplePage() {
             <main>
                 <PageHero
                     glow="red-ellipse"
+                    bgImage={PEOPLE_LANDING_BG}
                     title="People"
                     intro="Spice 360 is a Nigerian creative agency. The people who run it, make the work, and serve the clients are the agency. This is who they are."
                 />

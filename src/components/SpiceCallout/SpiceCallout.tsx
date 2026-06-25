@@ -11,7 +11,7 @@ import styles from "./SpiceCallout.module.scss";
 export default function SpiceCallout() {
     return (
         <section className={styles.section}>
-            <Glow position="bottom" tone="blue-dawn" />
+            <Glow position="top" tone="blue-dawn" />
             <div className={styles.inner}>
                 <p className={styles.eyebrow}>Brief us</p>
                 <h2 className={styles.heading}>Tell us what you&rsquo;re building</h2>

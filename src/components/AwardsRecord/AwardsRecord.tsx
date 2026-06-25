@@ -3,8 +3,8 @@ import SectionHead from "@/components/SectionHead/SectionHead";
 import styles from "./AwardsRecord.module.scss";
 
 const paragraphs = [
-    "Nigeria's Lagos Advertising and Ideas Festival ran its 19th edition in 2024. More than 50 agencies competed across categories including Print, Film, Digital Craft, and Integrated Campaigns. On debut, Spice 360 accumulated 90 points: five golds, seven silvers, four bronzes. The final ranking placed the agency 4th nationally.",
-    "The three agencies ahead were Insight Publicis, X3M Ideas, and Noah's Ark — agencies with decades of institutional history behind them. Industry press named Spice 360 a standout among new entrants. The agency called it confirmation.",
+    "Nigeria’s Lagos Advertising and Ideas Festival ran its 19th edition in 2024. More than 50 agencies competed across categories including Print, Film, Digital Craft, and Integrated Campaigns. On debut, Spice 360 accumulated 90 points: five golds, seven silvers, four bronzes. The final ranking placed the agency 4th nationally.",
+    "The three agencies ahead were Insight Publicis, X3M Ideas, and Noah’s Ark — agencies with decades of institutional history behind them. Industry press named Spice 360 a standout among new entrants. The agency called it confirmation.",
 ];
 
 export default function AwardsRecord() {
