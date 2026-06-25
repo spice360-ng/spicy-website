@@ -11,54 +11,75 @@
     gap: 48px;
 }
 
-.layout {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 48px;
-    align-items: start;
-}
-
 .grid {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 12px;
 }
 
 .tile {
     position: relative;
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 12px;
+    aspect-ratio: 3 / 4;
     overflow: hidden;
-    background: var(--c-ink);
-    opacity: 0.7;
-    transition: opacity 0.2s, outline-color 0.2s;
     outline: 2px solid transparent;
-    outline-offset: 2px;
+    outline-offset: -2px;
+    transition: outline-color 0.3s ease;
+    cursor: pointer;
 }
 
-.tileImg {
+.photo {
     object-fit: cover;
 }
 
-.tile:hover,
-.tileActive {
-    opacity: 1;
-    outline-color: var(--c-green-bright);
+/* Corporate is the resting image; t-shirt sits on top and fades in on hover. */
+.corporate {
+    z-index: 0;
 }
 
-.detail {
-    position: sticky;
-    top: 96px;
-    padding: 32px;
-    border-radius: 16px;
-    background:
-        radial-gradient(120% 80% at 0% 0%, rgba(105, 206, 125, 0.28), transparent 55%),
-        linear-gradient(180deg, #2e5e37 0%, #16301d 48%, #0a160e 100%);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.tshirt {
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.78) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.meta {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tile:hover,
+.tile:focus-visible {
+    outline-color: var(--c-red);
+
+    .tshirt {
+        opacity: 1;
+    }
+
+    .overlay {
+        opacity: 1;
+    }
+
+    .meta {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .spice {
@@ -69,26 +90,20 @@
 }
 
 .name {
+    margin-top: 4px;
     font-size: var(--fs-title);
     font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-title);
+    line-height: 1.1;
     color: var(--c-white);
 }
 
 .role {
+    margin-top: 4px;
     font-size: var(--fs-label);
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-label);
     color: var(--c-muted-on-dark);
-}
-
-.blurb {
-    margin-top: 8px;
-    font-size: var(--fs-body);
-    font-weight: var(--fw-medium);
-    letter-spacing: var(--ls-body);
-    line-height: 1.4;
-    color: var(--c-white);
 }
 
 @media (max-width: 760px) {
@@ -96,18 +111,19 @@
         padding: 60px 24px;
     }
 
-    .layout {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
-    .detail {
-        position: static;
-        order: -1;
+    /* Touch: no hover — reveal the t-shirt photo and meta at rest. */
+    .tshirt,
+    .overlay,
+    .meta {
+        opacity: 1;
+    }
+
+    .meta {
+        transform: none;
     }
 }

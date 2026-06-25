@@ -21,12 +21,12 @@ const items: FeatureItem[] = [
     {
         icon: "/icons/full-circle.svg",
         title: "Full Circle",
-        body: "The 360 in the name is a promise. We think across every stage of the consumer journey, every channel where the brand lives, every moment where communication can build or erode trust. Single-channel thinking is somebody else's business model.",
+        body: "The 360 in the name is a promise. We think across every stage of the consumer journey, every channel where the brand lives, every moment where communication can build or erode trust. Single-channel thinking is somebody else’s business model.",
     },
     {
         icon: "/icons/intelligence.svg",
         title: "Intelligence",
-        body: "The best creative work is also the best-researched work. We study our clients' consumers with a level of attention that less curious agencies direct elsewhere. Then we make something human from what we find.",
+        body: "The best creative work is also the best-researched work. We study our clients’ consumers with a level of attention that less curious agencies direct elsewhere. Then we make something human from what we find.",
     },
 ];
 
@@ -40,7 +40,7 @@ export default function Values() {
                     subcopy="What the agency believes"
                     tone="red"
                 />
-                <FeatureGrid items={items} wideFrom={3} accent="red" />
+                <FeatureGrid items={items} wideFrom={3} accent="red" glowScale={3} />
             </div>
         </section>
     );

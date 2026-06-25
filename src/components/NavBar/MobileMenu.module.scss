@@ -140,3 +140,10 @@
         display: inline-flex;
     }
 }
+
+/* Touch devices always get the hamburger, regardless of (landscape) width. */
+@media (pointer: coarse) {
+    .root {
+        display: inline-flex;
+    }
+}

@@ -5,6 +5,17 @@
     padding: 5rem var(--gutter) 3rem;
 }
 
+.bg {
+    z-index: 0;
+}
+
+.scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.82);
+}
+
 .inner {
     position: relative;
     z-index: 1;

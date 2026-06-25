@@ -100,3 +100,12 @@
         display: none;
     }
 }
+
+/* Touch devices always get the mobile menu, even in landscape where the viewport
+   is wide (a rotated phone should not reveal the desktop nav). */
+@media (pointer: coarse) {
+    .links,
+    .cta {
+        display: none;
+    }
+}
