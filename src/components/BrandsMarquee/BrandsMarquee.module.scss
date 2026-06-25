@@ -1,0 +1,73 @@
+// Animated brand-logo marquee — rows only. Heading/eyebrow/body copy and the
+// surrounding <section> live in each consuming page's module.scss.
+
+.marquee {
+    width: 100%;
+    max-width: 958px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+}
+
+.row {
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+    animation-duration: var(--dur);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.left {
+    animation-name: scrollLeft;
+}
+
+.right {
+    animation-name: scrollRight;
+}
+
+.playing .track {
+    animation-play-state: running;
+}
+
+.row:hover .track {
+    animation-duration: calc(var(--dur) / 1.25);
+}
+
+.tile {
+    flex: 0 0 auto;
+    width: 129px;
+    height: 46px;
+    display: block;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 4px)); }
+}
+
+@keyframes scrollRight {
+    from { transform: translateX(calc(-50% - 4px)); }
+    to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .track {
+        animation: none !important;
+    }
+}
