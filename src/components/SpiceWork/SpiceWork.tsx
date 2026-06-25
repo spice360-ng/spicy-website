@@ -14,7 +14,7 @@ const FEATURE: CaseStudy = {
     image: "/spice-digital/kellogs.jpg",
     series: "Series A",
     category: "Brand Sprint",
-    brand: "Kellogg's",
+    brand: "Kellogg’s",
     metric: "50x increase in product purchase and brand recognition",
 };
 
@@ -71,7 +71,7 @@ export default function SpiceWork() {
         <section className={styles.section}>
             <div className={styles.inner}>
                 <SectionHead
-                    eyebrow="What we've built"
+                    eyebrow="What we’ve built"
                     heading="Case studies and performance data"
                     subcopy="Campaign outcomes, brand launches, acquisition results, and client proof points. Populate with confirmed Spice Digital case studies as they are cleared for publication."
                     tone="cyan"
