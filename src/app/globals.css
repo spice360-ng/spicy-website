@@ -1,44 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-    /* --- Colors (from Figma) --- */
     --c-black:        #000000;
     --c-ink:          #1A1A1A;
     --c-white:        #FFFFFF;
     --c-off-white:    #F5F9F4;
 
-    --c-green-dark:   #2B5833;   /* Brand Strategy block, glow base */
-    --c-green-bright: #69CE7D;   /* eyebrow labels, glow */
-    --c-lime:         #E3FC6A;   /* primary CTA, number chips, glow */
-    --c-yellow:       #EEA953;   /* Digital Content block, glow */
-    --c-red:          #BC3431;   /* Integrated Campaigns block, People glow */
-    --c-orange:       #FE5E00;   /* About & Work section glow ellipse */
+    --c-green-dark:   #2B5833;
+    --c-green-bright: #69CE7D;
+    --c-lime:         #E3FC6A;
+    --c-yellow:       #EEA953;
+    --c-red:          #BC3431;
+    --c-orange:       #FE5E00;
 
-    /* Spice Digital — blue-dawn palette (indigo → cyan → mint glow stack) */
-    --c-blue-deep:    #212a68;   /* primary button, Spice Digital compare card, glow base */
-    --c-cyan:         #7BDCFB;   /* eyebrow labels, glow mid */
-    --c-mint:         #D7FDE3;   /* glow highlight */
-    --c-blue-soft:    #E8EEFF;   /* light secondary button bg */
-    --c-blue-ink:     #0F2A8A;   /* light secondary button text */
+    --c-blue-deep:    #212a68;
+    --c-cyan:         #7BDCFB;
+    --c-mint:         #D7FDE3;
+    --c-blue-soft:    #E8EEFF;
+    --c-blue-ink:     #0F2A8A;
 
-    --c-muted:        #898983;   /* muted body on light */
+    --c-muted:        #898983;
     --c-muted-on-dark: rgba(255, 255, 255, 0.62);
     --c-border-dark:  rgba(255, 255, 255, 0.12);
     --c-border-light: rgba(13, 21, 18, 0.10);
 
-    /* --- Typography --- */
     --font-sans: 'Google Sans Flex', system-ui, -apple-system, sans-serif;
     --font-dm:   'DM Sans', system-ui, -apple-system, sans-serif;
 
-    /* Type — exact Figma px (desktop 1440 frame) */
-    --fs-display: 48px;      /* section headings; mobile → 32 */
-    --fs-title:   24px;      /* card titles */
-    --fs-stat:    28px;      /* scoreboard numbers */
-    --fs-pillar:  25px;      /* pillar numbers */
-    --fs-label:   16px;      /* eyebrow / role labels */
-    --fs-body:    18px;      /* body copy */
-    --fs-link:    16px;      /* footer links */
-    --fs-pill:    12px;      /* button + nav labels */
+    --fs-display: 48px;
+    --fs-title:   24px;
+    --fs-stat:    28px;
+    --fs-pillar:  25px;
+    --fs-label:   16px;
+    --fs-body:    18px;
+    --fs-link:    16px;
+    --fs-pill:    12px;
 
     --fw-medium:   500;
     --fw-semibold: 600;
@@ -48,10 +44,9 @@
     --ls-body:    -0.04em;
     --ls-label:   -0.05em;
 
-    /* --- Layout --- */
-    --container:   1230px;     /* Figma inner content width (1440 − 2×105) */
+    --container:   1230px;
     --gutter:      clamp(20px, 7.3vw, 105px);
-    --radius:      8px;        /* buttons */
+    --radius:      8px;
 }
 
 @media (max-width: 760px) {

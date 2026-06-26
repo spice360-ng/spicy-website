@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import Glow from "@/components/Glow/Glow";
-import Slideshow from "@/components/Slideshow/Slideshow";
 import { contact, route, type ContactKind } from "@/lib/contact";
-import { FUN_SLIDES } from "@/data/groupPhotos";
 import styles from "./Footer.module.scss";
 
 type GlowTone = "warm" | "cool" | "blue-dawn" | "orange-ellipse" | "red-ellipse";
 
 type FooterProps = {
-    /** Page the footer sits on — drives the glow colour and the "Get in touch" message. */
+
     page?: "home" | "about" | "people" | "spice-digital";
+
+    transparent?: boolean;
 };
 
 const PAGE: Record<
@@ -23,10 +23,9 @@ const PAGE: Record<
     "spice-digital": { glow: "blue-dawn", contact: "brief" },
 };
 
-export default function Footer({ page = "home" }: FooterProps) {
+export default function Footer({ page = "home", transparent = false }: FooterProps) {
     const cfg = PAGE[page];
 
-    // href values resolve to routes that exist today (see lib/contact).
     const primary = [
         { label: "Home", href: route("home") },
         { label: "About & Work", href: route("about") },
@@ -41,19 +40,13 @@ export default function Footer({ page = "home" }: FooterProps) {
     ];
 
     return (
-        <footer className={styles.footer}>
-            {page === "people" && (
-                <>
-                    <Slideshow images={FUN_SLIDES} className={styles.bg} />
-                    <div className={styles.scrim} aria-hidden />
-                </>
-            )}
+        <footer className={`${styles.footer} ${transparent ? styles.transparent : ""}`}>
             <Glow position="bottom" tone={cfg.glow} strength={0.5} />
             <div className={styles.inner}>
                 <div className={styles.top}>
                     <div className={styles.brand}>
                         <Image
-                            src="/logo/spice360-white.png"
+                            src="/logo/spice360-color.png"
                             alt="Spice360"
                             width={109}
                             height={29}

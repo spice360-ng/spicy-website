@@ -17,7 +17,6 @@
     flex: 0 0 calc((100% - 16px) / 2);
 }
 
-/* Per-card orange glow behind the content (Figma uses an ellipse per card). */
 .cardGlow {
     position: absolute;
     inset: 0;
@@ -25,12 +24,11 @@
     pointer-events: none;
     background:
         radial-gradient(80% 60% at 50% 100%, rgba(254, 94, 0, 0.22) 0%, rgba(254, 94, 0, 0) 70%);
-    /* scale (default 1) enlarges the bloom from the card's bottom edge — see `glowScale` */
+
     transform: scale(var(--card-glow-scale, 1));
     transform-origin: bottom center;
 }
 
-/* Two groups pushed apart: [chip + kicker] at top, [title + body] at bottom (Figma). */
 .cardBody {
     position: relative;
     z-index: 1;
@@ -54,7 +52,6 @@
     gap: 16px;
 }
 
-/* Number chip: filled accent square with a white numeral (Figma #EEA953 / white, 25px). */
 .numberChip {
     display: inline-flex;
     align-items: center;

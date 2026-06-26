@@ -14,7 +14,6 @@ const tiles = [
     "/brand-tiles/tile-8.png",
 ];
 
-// Four rows, each a rotated order so the columns don't line up, alternating direction.
 const rows = [
     { dir: "left", order: [0, 1, 2, 3, 4, 5, 6, 7], dur: 38 },
     { dir: "right", order: [4, 5, 6, 7, 0, 1, 2, 3], dur: 46 },

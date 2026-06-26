@@ -2,11 +2,11 @@ import type { CSSProperties } from "react";
 import styles from "./FeatureGrid.module.scss";
 
 export type FeatureItem = {
-    /** Numbered variant: "01"…"06" (faint number, About capabilities). */
+
     number?: string;
-    /** Icon variant: path to an SVG under /public (People values). */
+
     icon?: string;
-    /** Optional lead/sub line shown above the title (About capabilities). */
+
     kicker?: string;
     title: string;
     body: string;
@@ -14,19 +14,14 @@ export type FeatureItem = {
 
 type FeatureGridProps = {
     items: FeatureItem[];
-    /** Index from which cards switch to half-width (e.g. a 3-then-2 value grid). */
+
     wideFrom?: number;
-    /** Icon-chip colour for the icon variant. */
+
     accent?: "gold" | "red";
-    /** Enlarge the per-card bloom from its bottom edge (2 = twice as big, etc.). */
+
     glowScale?: number;
 };
 
-/**
- * Card grid shared by About's "Six capabilities" (faint number + sub-line) and People's
- * "Five values" (icon chip). Cards have no fill — each sits on the black section with its
- * own soft orange glow behind it, matching the per-card ellipses in Figma.
- */
 export default function FeatureGrid({ items, wideFrom, accent = "gold", glowScale }: FeatureGridProps) {
     return (
         <div className={styles.grid}>

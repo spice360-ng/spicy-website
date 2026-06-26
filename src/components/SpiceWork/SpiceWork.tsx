@@ -61,11 +61,6 @@ function Card({ study, wide }: { study: CaseStudy; wide?: boolean }) {
     );
 }
 
-/**
- * "Case studies and performance data" (Figma 172:522): a centred header above a photo
- * grid — one wide feature card over a two-up row — each carrying a series/category tag
- * and a brand + metric overlaid on a darkened scrim.
- */
 export default function SpiceWork() {
     return (
         <section className={styles.section}>

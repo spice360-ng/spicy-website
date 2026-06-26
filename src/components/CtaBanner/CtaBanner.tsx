@@ -8,18 +8,22 @@ type CtaBannerProps = {
     button: { label: string; href: string };
     glow?: "amber" | "ember";
     accent?: "gold" | "red";
+
+    transparent?: boolean;
 };
 
-/** Closing call-to-action shared by both pages: heading, body, single button, top glow. */
 export default function CtaBanner({
     heading,
     body,
     button,
     glow = "amber",
     accent = "gold",
+    transparent = false,
 }: CtaBannerProps) {
     return (
-        <section className={`${styles.section} ${styles[accent]}`}>
+        <section
+            className={`${styles.section} ${styles[accent]} ${transparent ? styles.transparent : ""}`}
+        >
             <Glow position="bottom" tone={glow} />
             <div className={styles.inner}>
                 <h2 className={styles.heading}>{heading}</h2>
