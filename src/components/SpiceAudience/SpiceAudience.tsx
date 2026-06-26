@@ -1,14 +1,14 @@
+import Image from "next/image";
 import Glow from "@/components/Glow/Glow";
 import SectionHead from "@/components/SectionHead/SectionHead";
+import { SPICE_AUDIENCE_BG } from "@/data/groupPhotos";
 import styles from "./SpiceAudience.module.scss";
 
-/**
- * "Who Spice Digital serves" (Figma 172:481): cyan eyebrow, a centred display heading over
- * a soft indigo bloom, and three paragraphs ending on the line that defines the fit.
- */
 export default function SpiceAudience() {
     return (
         <section className={styles.section}>
+            <Image src={SPICE_AUDIENCE_BG} alt="" fill sizes="100vw" className={styles.bg} />
+            <div className={styles.scrim} aria-hidden />
             <Glow position="top" tone="blue-dawn" />
             <div className={styles.inner}>
                 <SectionHead
@@ -26,7 +26,7 @@ export default function SpiceAudience() {
                         Founders or CMOs who understand the value of brand but have not had
                         the time or budget to build it properly. Companies growing fast
                         enough that informal marketing is no longer sufficient. Backed by
-                        investors who will notice &mdash; and value &mdash; a credible brand
+                        investors who will notice, and value, a credible brand
                         presence.
                     </p>
                     <p>

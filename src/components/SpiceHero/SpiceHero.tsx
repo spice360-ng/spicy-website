@@ -2,11 +2,6 @@ import Glow from "@/components/Glow/Glow";
 import { contact } from "@/lib/contact";
 import styles from "./SpiceHero.module.scss";
 
-/**
- * Top-of-page hero for Spice Digital (Figma 172:410): a centred display title with the
- * intro and a single "Brief Spice Digital" button set lower, over the indigo blue-dawn
- * bloom that the fixed NavBar reads against.
- */
 export default function SpiceHero() {
     return (
         <section className={styles.hero}>
@@ -19,7 +14,7 @@ export default function SpiceHero() {
                     <p className={styles.intro}>
                         Spice Digital is Spice 360&rsquo;s dedicated arm for African tech
                         startups. Brand identity, growth marketing, and digital
-                        infrastructure &mdash; built for the pace and reality of a company
+                        infrastructure, built for the pace and reality of a company
                         that cannot afford to slow down.
                     </p>
                     <a

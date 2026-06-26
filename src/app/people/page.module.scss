@@ -1,0 +1,29 @@
+.outro {
+    position: relative;
+    overflow: hidden;
+}
+
+.outroBg {
+    z-index: 0;
+}
+
+.onlyNarrow {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    .onlyWide {
+        display: none;
+    }
+
+    .onlyNarrow {
+        display: block;
+    }
+}
+
+.outroScrim {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.72);
+}

@@ -32,7 +32,6 @@
     object-fit: cover;
 }
 
-/* Corporate is the resting image; t-shirt sits on top and fades in on hover. */
 .corporate {
     z-index: 0;
 }
@@ -65,12 +64,9 @@
 }
 
 .tile:hover,
-.tile:focus-visible {
+.tile:focus-visible,
+.flipped {
     outline-color: var(--c-red);
-
-    .tshirt {
-        opacity: 1;
-    }
 
     .overlay {
         opacity: 1;
@@ -82,16 +78,20 @@
     }
 }
 
+.flipped .tshirt {
+    opacity: 1;
+}
+
 .spice {
-    font-size: var(--fs-label);
+    font-size: 9px;
     font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-label);
     color: var(--c-green-bright);
 }
 
 .name {
-    margin-top: 4px;
-    font-size: var(--fs-title);
+    margin-top: 2px;
+    font-size: 13px;
     font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-title);
     line-height: 1.1;
@@ -99,8 +99,8 @@
 }
 
 .role {
-    margin-top: 4px;
-    font-size: var(--fs-label);
+    margin-top: 2px;
+    font-size: 9px;
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-label);
     color: var(--c-muted-on-dark);
@@ -114,16 +114,5 @@
     .grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-    }
-
-    /* Touch: no hover — reveal the t-shirt photo and meta at rest. */
-    .tshirt,
-    .overlay,
-    .meta {
-        opacity: 1;
-    }
-
-    .meta {
-        transform: none;
     }
 }

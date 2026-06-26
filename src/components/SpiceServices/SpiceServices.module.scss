@@ -27,18 +27,16 @@
     overflow: hidden;
 }
 
-/* Per-card indigo bloom behind the content (Figma stacks an ellipse per card). */
 .cardGlow {
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
     background:
-        radial-gradient(85% 62% at 28% 96%, rgba(33, 42, 104, 0.95) 0%, rgba(33, 42, 104, 0) 72%),
-        radial-gradient(64% 46% at 24% 100%, rgba(123, 220, 251, 0.32) 0%, rgba(123, 220, 251, 0) 64%);
+        radial-gradient(85% 62% at 50% 100%, rgba(33, 42, 104, 0.95) 0%, rgba(33, 42, 104, 0) 72%),
+        radial-gradient(64% 46% at 50% 100%, rgba(123, 220, 251, 0.32) 0%, rgba(123, 220, 251, 0) 64%);
 }
 
-/* Title pinned top, body pinned bottom (Figma content frame uses space-between). */
 .cardBody {
     position: relative;
     z-index: 1;

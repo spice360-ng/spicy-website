@@ -1,13 +1,13 @@
+import Image from "next/image";
 import SectionHead from "@/components/SectionHead/SectionHead";
+import { SPICE_ABOUT_BG } from "@/data/groupPhotos";
 import styles from "./SpiceAbout.module.scss";
 
-/**
- * "About Spice Digital" (Figma 233:214): cyan eyebrow, a two-line display heading, and
- * three centred paragraphs laying out who the sub-brand is built for.
- */
 export default function SpiceAbout() {
     return (
         <section className={styles.section}>
+            <Image src={SPICE_ABOUT_BG} alt="" fill sizes="100vw" className={styles.bg} />
+            <div className={styles.scrim} aria-hidden />
             <div className={styles.inner}>
                 <SectionHead
                     eyebrow="About Spice Digital"

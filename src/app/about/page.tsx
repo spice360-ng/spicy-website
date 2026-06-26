@@ -14,7 +14,7 @@ import { contact } from "@/lib/contact";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
-    title: "About & Work — Spice360",
+    title: "About & Work | Spice360",
     description:
         "Spice360 grew out of the Tolaram Group into a LAIF-winning Nigerian creative agency. The work, the capabilities, and the standard behind it.",
 };

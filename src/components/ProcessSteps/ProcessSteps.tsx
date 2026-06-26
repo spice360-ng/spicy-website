@@ -25,7 +25,7 @@ const steps = [
     {
         no: "05",
         title: "Results",
-        body: "We measure against what we agreed to measure. We report what we found — including what did not work.",
+        body: "We measure against what we agreed to measure. We report what we found, including what did not work.",
     },
 ];
 
