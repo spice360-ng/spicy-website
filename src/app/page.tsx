@@ -72,9 +72,9 @@ export default function Home() {
         <>
             <NavBar />
             <main>
-                {/* Hero */}
+
                 <section className={styles.hero}>
-                    <Slideshow images={HERO_SLIDES} priority className={styles.heroSlides} />
+                    <Slideshow images={HERO_SLIDES} priority randomStart className={styles.heroSlides} />
                     <div className={styles.heroScrim} aria-hidden />
                     <Glow position="top" tone="warm" />
                     <div className={styles.heroInner}>
@@ -105,7 +105,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* How we work */}
                 <section className={styles.hwwSection}>
                     <div className={styles.hwwInner}>
                         <p className={styles.hwwEyebrow}>Our three pillars</p>
@@ -127,7 +126,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Motto */}
                 <section className={styles.motto} aria-label="Our motto">
                     <Image
                         src={MOTTO_BG}
@@ -145,7 +143,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Scoreboard */}
                 <section className={styles.sbSection}>
                     <Glow position="bottom" tone="warm" scale={2} />
                     <div className={styles.sbInner}>
@@ -163,7 +160,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Services */}
                 <section className={styles.svcSection}>
                     <div className={styles.svcInner}>
                         <div className={styles.svcHead}>
@@ -204,7 +200,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Leadership */}
                 <section className={styles.ldSection}>
                     <Glow position="bottom" tone="warm" scale={2} />
                     <div className={styles.ldInner}>
@@ -238,7 +233,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Brands */}
                 <section className={styles.brSection}>
                     <div className={styles.brPanel}>
                         <header className={styles.brHead}>
@@ -252,13 +246,12 @@ export default function Home() {
 
                         <p className={styles.brCopy}>
                             Active mandates include Indomie, Dano Milk, Power Oil, Kellogg&rsquo;s,
-                            Colgate Nigeria, 2sure, Hero, Minimie, Lush Hair, and Hypo &mdash;
+                            Colgate Nigeria, 2sure, Hero, Minimie, Lush Hair, and Hypo,
                             across food, personal care, and lifestyle.
                         </p>
                     </div>
                 </section>
 
-                {/* Team */}
                 <section className={styles.tmSection}>
                     <div className={styles.tmInner}>
                         <p className={styles.tmEyebrow}>Our Team</p>
@@ -273,7 +266,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Blog */}
                 <section className={styles.blSection}>
                     <Glow position="top" tone="warm" />
                     <div className={styles.blInner}>
@@ -330,7 +322,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Spice Digital */}
                 <section className={styles.sdSection}>
                     <Glow position="top" tone="cool" />
                     <div className={styles.sdInner}>
