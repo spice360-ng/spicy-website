@@ -6,7 +6,7 @@ const items: FeatureItem[] = [
     {
         icon: "/icons/heat.svg",
         title: "Heat",
-        body: "Every brief is an opportunity to make something that creates a real reaction. Not warm, not pleasant — genuinely felt. If a campaign does not move someone, it has not done its job. The agency is uncomfortable with lukewarm.",
+        body: "Every brief is an opportunity to make something that creates a real reaction. Not warm, not pleasant, but genuinely felt. If a campaign does not move someone, it has not done its job. The agency is uncomfortable with lukewarm.",
     },
     {
         icon: "/icons/root.svg",
@@ -32,7 +32,7 @@ const items: FeatureItem[] = [
 
 export default function Values() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} data-stagger>
             <div className={styles.inner}>
                 <SectionHead
                     eyebrow="Culture and values"

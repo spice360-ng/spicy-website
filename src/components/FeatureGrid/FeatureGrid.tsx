@@ -29,7 +29,7 @@ export default function FeatureGrid({ items, wideFrom, accent = "gold", glowScal
                 const wide = wideFrom !== undefined && i >= wideFrom;
                 return (
                     <article
-                        key={item.title}
+                        key={i}
                         className={`${styles.card} ${wide ? styles.wide : ""}`}
                     >
                         <span
