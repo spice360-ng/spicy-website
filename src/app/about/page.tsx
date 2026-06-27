@@ -8,15 +8,27 @@ import AwardsRecord from "@/components/AwardsRecord/AwardsRecord";
 import SectionHead from "@/components/SectionHead/SectionHead";
 import BrandsMarquee from "@/components/BrandsMarquee/BrandsMarquee";
 import ProcessSteps from "@/components/ProcessSteps/ProcessSteps";
-import CtaBanner from "@/components/CtaBanner/CtaBanner";
 import Footer from "@/components/Footer/Footer";
-import { contact } from "@/lib/contact";
 import styles from "./page.module.scss";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
     title: "About & Work | Spice360",
     description:
         "Spice360 grew out of the Tolaram Group into a LAIF-winning Nigerian creative agency. The work, the capabilities, and the standard behind it.",
+    alternates: { canonical: "https://www.spice360.com.mg/about" },
+    openGraph: {
+        title: "About & Work | Spice360",
+        description:
+            "Spice360 grew out of the Tolaram Group into a LAIF-winning Nigerian creative agency. The work, the capabilities, and the standard behind it.",
+        url: "https://www.spice360.com.mg/about",
+    },
+    twitter: {
+        title: "About & Work | Spice360",
+        description:
+            "Spice360 grew out of the Tolaram Group into a LAIF-winning Nigerian creative agency. The work, the capabilities, and the standard behind it.",
+    },
 };
 
 export default function AboutPage() {
@@ -54,13 +66,6 @@ export default function AboutPage() {
                     </div>
                 </section>
                 <ProcessSteps />
-                <CtaBanner
-                    glow="amber"
-                    accent="gold"
-                    heading="Start a conversation"
-                    body="Tell us what your brand is trying to do and leave the rest to us"
-                    button={{ label: "Brief us", href: contact.work }}
-                />
             </main>
             <Footer page="about" />
         </>
