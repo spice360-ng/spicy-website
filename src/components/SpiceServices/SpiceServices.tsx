@@ -32,7 +32,7 @@ const SERVICES: Service[] = [
 
 export default function SpiceServices() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} data-stagger>
             <div className={styles.inner}>
                 <SectionHead
                     eyebrow="What do we do"

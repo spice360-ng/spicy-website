@@ -8,6 +8,7 @@ export const HERO_SLIDES = [
     `${G}/team-mixed-huddle+devices-2.jpg`,
     `${G}/team-mixed-huddle+devices-3.jpg`,
     `${G}/team-mixed-casual.jpg`,
+    `${G}/team-full-applause.jpg`,
 ];
 
 export const MOTTO_BG = `${G}/motto-mixed.jpg`;
@@ -52,4 +53,20 @@ export const PEOPLE_FOOTER_MOBILE = [
     `${G}/goof-Adaobi-OnyenzeUgochukwu-Saffron.jpg`,
     `${G}/goof-Oluremi-Ogunwale-Crayfish.jpg`,
     `${G}/goof-Oladele-Gbolahan-spicename.jpg`,
+];
+
+export const SPICE_FOOTER_SLIDES = [
+    `${G}/team-mixed+devices.jpg`,
+    `${G}/team-mixed-discourse+devices.jpg`,
+    `${G}/team-mixed-hifive+devices.jpg`,
+    `${G}/team-mixed-huddle+devices-1.jpg`,
+    `${G}/team-mixed-huddle+devices-2.jpg`,
+    `${G}/team-mixed-huddle+devices-3.jpg`,
+    `${G}/team-mixed-backdrop.jpg`,
+    `${G}/team-mixed-casual.jpg`,
+    `${G}/team-mixed-discourse.jpg`,
+    `${G}/team-mixed-pose.jpg`,
+    `${G}/team-mixed-strategy.jpg`,
+    `${G}/team-female-discourse.jpg`,
+    `${G}/team-full-discourse.jpg`,
 ];

@@ -8,7 +8,7 @@ type SlideshowProps = {
     images: string[];
     interval?: number;
     priority?: boolean;
-    randomStart?: boolean;
+    startIndex?: number;
     className?: string;
 };
 
@@ -16,18 +16,10 @@ export default function Slideshow({
     images,
     interval = 5000,
     priority = false,
-    randomStart = false,
+    startIndex = 0,
     className,
 }: SlideshowProps) {
-    const [active, setActive] = useState(0);
-
-    useEffect(() => {
-        if (!randomStart || images.length <= 1) return;
-        const id = requestAnimationFrame(() =>
-            setActive(Math.floor(Math.random() * images.length)),
-        );
-        return () => cancelAnimationFrame(id);
-    }, [randomStart, images.length]);
+    const [active, setActive] = useState(startIndex);
 
     useEffect(() => {
         if (images.length <= 1) return;
@@ -51,7 +43,7 @@ export default function Slideshow({
                     alt=""
                     fill
                     sizes="100vw"
-                    priority={priority && i === 0}
+                    priority={priority && i === startIndex}
                     className={`${styles.slide} ${i === active ? styles.active : ""}`}
                 />
             ))}
