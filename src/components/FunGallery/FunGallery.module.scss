@@ -15,17 +15,14 @@
     opacity: 0;
 }
 
-/* "up" tiles sit a little raised and enter from below; "down" tiles sit a little
-   lowered and enter from above. */
 .up {
-    margin-bottom: 1.75rem;
+    margin-bottom: 2.1875rem;
 }
 
 .down {
-    margin-top: 1.75rem;
+    margin-top: 2.1875rem;
 }
 
-/* Entrance plays only once the section is in view (the `run` class), per set. */
 .run.up {
     animation: funUp 500ms ease forwards;
 }
@@ -35,12 +32,12 @@
 }
 
 @keyframes funUp {
-    from { opacity: 0; transform: translateY(40px); }
+    from { opacity: 0; transform: translateY(50px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes funDown {
-    from { opacity: 0; transform: translateY(-40px); }
+    from { opacity: 0; transform: translateY(-50px); }
     to { opacity: 1; transform: translateY(0); }
 }
 

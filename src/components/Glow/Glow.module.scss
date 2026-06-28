@@ -4,7 +4,7 @@
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
-    /* scale (default 1) enlarges the bloom from its anchored edge — see the `scale` prop */
+
     transform: scale(var(--glow-scale, 1));
 }
 
@@ -16,13 +16,6 @@
     transform-origin: bottom center;
 }
 
-/*
- * Each tone is a large, soft bloom anchored to one edge that fills roughly the upper
- * (or lower) ~65% of the section before fading to pure black — matching the oversized
- * blurred ellipses in Figma (2324×1397, blur ~450). Colours stack brightest→faintest.
- */
-
-/* ---------- Top-anchored (hero) ---------- */
 .top.warm {
     background:
         radial-gradient(125% 92% at 50% -4%, rgba(43, 88, 51, 0.88) 0%, rgba(43, 88, 51, 0) 70%),
@@ -41,7 +34,6 @@
         radial-gradient(125% 92% at 50% -4%, rgba(254, 94, 0, 0.4) 0%, rgba(254, 94, 0, 0) 70%);
 }
 
-/* About & Work — gold / red / pink (#EEA953, #EC6372, #F7D0D5) */
 .top.amber {
     background:
         radial-gradient(125% 92% at 50% -4%, rgba(238, 169, 83, 0.62) 0%, rgba(238, 169, 83, 0) 70%),
@@ -49,14 +41,12 @@
         radial-gradient(68% 44% at 50% -4%, rgba(247, 208, 213, 0.20) 0%, rgba(247, 208, 213, 0) 58%);
 }
 
-/* People — orange / red (#FE5E00, #BC3431) */
 .top.ember {
     background:
         radial-gradient(125% 92% at 50% -4%, rgba(254, 94, 0, 0.55) 0%, rgba(254, 94, 0, 0) 70%),
         radial-gradient(95% 64% at 50% -4%, rgba(188, 52, 49, 0.34) 0%, rgba(188, 52, 49, 0) 64%);
 }
 
-/* Spice Digital — indigo / cyan / mint dawn (#212A68, #7BDCFB, #D7FDE3) */
 .top.blue-dawn {
     background:
         radial-gradient(125% 92% at 50% -4%, rgba(33, 42, 104, 0.85) 0%, rgba(33, 42, 104, 0) 70%),
@@ -64,7 +54,6 @@
         radial-gradient(68% 44% at 50% -4%, rgba(215, 253, 227, 0.16) 0%, rgba(215, 253, 227, 0) 58%);
 }
 
-/* ---------- Bottom-anchored ---------- */
 .bottom.warm {
     background:
         radial-gradient(125% 92% at 50% 104%, rgba(43, 88, 51, 0.88) 0%, rgba(43, 88, 51, 0) 70%),
@@ -96,7 +85,6 @@
         radial-gradient(95% 64% at 50% 104%, rgba(188, 52, 49, 0.34) 0%, rgba(188, 52, 49, 0) 64%);
 }
 
-/* Spice Digital — brighter at the foot: cyan/mint rising over the indigo base. */
 .bottom.blue-dawn {
     background:
         radial-gradient(128% 96% at 50% 108%, rgba(33, 42, 104, 0.92) 0%, rgba(33, 42, 104, 0) 70%),
@@ -104,12 +92,6 @@
         radial-gradient(74% 48% at 50% 112%, rgba(215, 253, 227, 0.30) 0%, rgba(215, 253, 227, 0) 58%);
 }
 
-/*
- * ---------- Ellipse variants (the real Figma treatment) ----------
- * A single oversized ellipse (Figma: 2324×1397, centred on the 1440 frame) bleeding
- * off one edge. Figma carries no blur on the layer, so we add filter: blur(80px) to
- * reproduce the soft edge. The section clips it via overflow: hidden.
- */
 .ellipse {
     position: absolute;
     left: 50%;
@@ -122,7 +104,7 @@
 }
 
 .top .ellipse {
-    /* centre sits just below the top edge so the bloom bleeds up and out */
+
     top: -908px;
 }
 

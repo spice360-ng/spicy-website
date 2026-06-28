@@ -30,14 +30,9 @@ const SERVICES: Service[] = [
     },
 ];
 
-/**
- * "Six services, all of them connected" (Figma 172:433): a left-aligned header above a
- * 3×2 grid of glassless cards, each sitting on its own indigo blue-dawn bloom with the
- * title pinned top and the body pinned bottom.
- */
 export default function SpiceServices() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} data-stagger>
             <div className={styles.inner}>
                 <SectionHead
                     eyebrow="What do we do"

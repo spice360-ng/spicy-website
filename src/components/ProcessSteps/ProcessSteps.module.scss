@@ -11,16 +11,11 @@
     align-items: center;
 }
 
-/*
- * Rows are a 965px-wide block centred under the header. Each row is a flex row with
- * space-between: number (auto) at the far left, title (auto) centred between number
- * and body, body (fixed 356px) at the right — exactly how Figma 172:923 lays it out.
- */
 .steps {
     list-style: none;
     width: 100%;
     max-width: 965px;
-    margin-top: 153px; /* Figma gap between header block and first row */
+    margin-top: 153px;
     display: flex;
     flex-direction: column;
 }
@@ -28,7 +23,7 @@
 .step {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* number + title sit on the row's vertical centre line */
+    align-items: center;
     gap: 24px;
     padding: 28px 0;
     min-height: 140px;
@@ -68,7 +63,6 @@
         max-width: none;
     }
 
-    /* number + title share the first line; body drops to a full-width second line. */
     .step {
         flex-direction: row;
         flex-wrap: wrap;

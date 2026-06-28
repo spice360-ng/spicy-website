@@ -6,25 +6,20 @@ import styles from "./Slideshow.module.scss";
 
 type SlideshowProps = {
     images: string[];
-    /** Time each slide is held, ms. */
     interval?: number;
-    /** Priority-load the first image (use for above-the-fold backgrounds). */
     priority?: boolean;
+    startIndex?: number;
     className?: string;
 };
 
-/**
- * Full-bleed crossfading background. Cycles `images` on an interval, fading the
- * active one in over the others. Respects prefers-reduced-motion (holds the first
- * image, no cycling). Render inside a position:relative, overflow:hidden parent.
- */
 export default function Slideshow({
     images,
     interval = 5000,
     priority = false,
+    startIndex = 0,
     className,
 }: SlideshowProps) {
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState(startIndex);
 
     useEffect(() => {
         if (images.length <= 1) return;
@@ -48,7 +43,7 @@ export default function Slideshow({
                     alt=""
                     fill
                     sizes="100vw"
-                    priority={priority && i === 0}
+                    priority={priority && i === startIndex}
                     className={`${styles.slide} ${i === active ? styles.active : ""}`}
                 />
             ))}

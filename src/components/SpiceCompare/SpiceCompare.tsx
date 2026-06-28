@@ -15,11 +15,6 @@ const SPICE_DIGITAL = [
     "Sprint-based, startup commercial model",
 ];
 
-/**
- * "Two doors into the same building" (Figma 172:495): the one white section on the page.
- * A muted eyebrow and dark heading sit over two flush comparison cards — Spice 360 in
- * green, Spice Digital in indigo — closing on the line about how the two relate.
- */
 export default function SpiceCompare() {
     return (
         <section className={styles.section}>
@@ -55,7 +50,7 @@ export default function SpiceCompare() {
                     Both brands share infrastructure, creative values, and the FlavourBoard.
                     They do not compete for the same clients. When a Spice Digital client
                     grows to the point of needing above-the-line campaign work, the
-                    transition to a Spice 360 engagement is natural &mdash; not a pitch.
+                    transition to a Spice 360 engagement is natural, not a pitch.
                 </p>
             </div>
         </section>

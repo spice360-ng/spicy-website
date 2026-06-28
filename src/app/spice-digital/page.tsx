@@ -6,13 +6,26 @@ import SpiceServices from "@/components/SpiceServices/SpiceServices";
 import SpiceAudience from "@/components/SpiceAudience/SpiceAudience";
 import SpiceCompare from "@/components/SpiceCompare/SpiceCompare";
 import SpiceWork from "@/components/SpiceWork/SpiceWork";
-import SpiceCallout from "@/components/SpiceCallout/SpiceCallout";
 import Footer from "@/components/Footer/Footer";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
-    title: "Spice Digital — Spice360",
+    title: "Spice Digital | Spice360",
     description:
         "Spice Digital is Spice 360's dedicated arm for African tech startups: brand identity, growth marketing, and digital infrastructure built for the pace of a funded company.",
+    alternates: { canonical: "https://www.spice360.com.mg/spice-digital" },
+    openGraph: {
+        title: "Spice Digital | Spice360",
+        description:
+            "Spice Digital is Spice 360's dedicated arm for African tech startups: brand identity, growth marketing, and digital infrastructure built for the pace of a funded company.",
+        url: "https://www.spice360.com.mg/spice-digital",
+    },
+    twitter: {
+        title: "Spice Digital | Spice360",
+        description:
+            "Spice Digital is Spice 360's dedicated arm for African tech startups: brand identity, growth marketing, and digital infrastructure built for the pace of a funded company.",
+    },
 };
 
 export default function SpiceDigitalPage() {
@@ -26,7 +39,6 @@ export default function SpiceDigitalPage() {
                 <SpiceAudience />
                 <SpiceCompare />
                 <SpiceWork />
-                <SpiceCallout />
             </main>
             <Footer page="spice-digital" />
         </>

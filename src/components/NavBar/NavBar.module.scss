@@ -8,7 +8,6 @@
     transition: background 0.25s ease, padding 0.25s ease, backdrop-filter 0.25s ease;
 }
 
-/* Accent theming: gold on About, red on People, green elsewhere. */
 .green {
     --accent: var(--c-green-dark);
 }
@@ -101,8 +100,6 @@
     }
 }
 
-/* Touch devices always get the mobile menu, even in landscape where the viewport
-   is wide (a rotated phone should not reveal the desktop nav). */
 @media (pointer: coarse) {
     .links,
     .cta {

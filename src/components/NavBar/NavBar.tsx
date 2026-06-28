@@ -15,15 +15,13 @@ const links = [
 ];
 
 type NavBarProps = {
-    /** Per-page accent for the CTA and mobile menu (gold on About, red on People, blue on Spice Digital). */
+
     accent?: "green" | "gold" | "red" | "blue";
 };
 
 export default function NavBar({ accent = "green" }: NavBarProps) {
     const [scrolled, setScrolled] = useState(false);
 
-    // Sticky nav gains a frosted background once scrolled off the hero so links stay
-    // readable over the white sections.
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 24);
         onScroll();
@@ -38,7 +36,7 @@ export default function NavBar({ accent = "green" }: NavBarProps) {
             <div className={styles.inner}>
                 <Link href="/" className={styles.logo} aria-label="Spice360 home">
                     <Image
-                        src="/logo/spice360-color.png"
+                        src="/logo/spice360-white.png"
                         alt="Spice360"
                         width={109}
                         height={29}

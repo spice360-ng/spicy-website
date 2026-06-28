@@ -5,16 +5,12 @@ type SectionHeadProps = {
     heading: string;
     subcopy?: string;
     align?: "center" | "left";
-    /** Eyebrow colour: gold (About dark), red (People dark), muted (white), green, cyan (Spice Digital). */
+
     tone?: "gold" | "red" | "muted" | "green" | "cyan";
-    /** dark = white text on black; light = near-black text on white sections. */
+
     surface?: "dark" | "light";
 };
 
-/**
- * Recurring section header: eyebrow label, display heading, optional subcopy.
- * Centred by default to match the Figma section headers on both pages.
- */
 export default function SectionHead({
     eyebrow,
     heading,

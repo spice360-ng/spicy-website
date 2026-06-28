@@ -1,4 +1,6 @@
 import SectionHead from "@/components/SectionHead/SectionHead";
+import Slideshow from "@/components/Slideshow/Slideshow";
+import { OUR_STORY_SLIDES } from "@/data/groupPhotos";
 import styles from "./OurStory.module.scss";
 
 const paragraphs = [
@@ -9,6 +11,8 @@ const paragraphs = [
 export default function OurStory() {
     return (
         <section className={styles.section}>
+            <Slideshow images={OUR_STORY_SLIDES} className={styles.bg} />
+            <div className={styles.scrim} aria-hidden />
             <div className={styles.inner}>
                 <SectionHead
                     eyebrow="Our Story"

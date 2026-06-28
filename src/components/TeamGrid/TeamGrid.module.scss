@@ -22,17 +22,25 @@
     position: relative;
     aspect-ratio: 3 / 4;
     overflow: hidden;
-    outline: 2px solid transparent;
-    outline-offset: -2px;
-    transition: outline-color 0.3s ease;
+    outline: none;
     cursor: pointer;
+}
+
+/* Ring sits above the photos so the 2px People-red border is always visible. */
+.tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transition: border-color 0.3s ease;
 }
 
 .photo {
     object-fit: cover;
 }
 
-/* Corporate is the resting image; t-shirt sits on top and fades in on hover. */
 .corporate {
     z-index: 0;
 }
@@ -64,34 +72,79 @@
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.tile:hover,
-.tile:focus-visible {
-    outline-color: var(--c-red);
-
-    .tshirt {
+/* Hover-capable devices: hover eases corporate -> t-shirt and reveals the meta;
+   clicking while hovered toggles back to corporate (the `flipped` class). */
+@media (hover: hover) {
+    .tile:hover .tshirt {
         opacity: 1;
     }
 
-    .overlay {
+    .tile:hover.flipped .tshirt {
+        opacity: 0;
+    }
+
+    .tile:hover::after {
+        border-color: var(--c-red);
+    }
+
+    .tile:hover .overlay {
         opacity: 1;
     }
 
-    .meta {
+    .tile:hover .meta {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Touch devices: a tap (flipped) drives the swap + reveal; tap again to toggle. */
+@media (hover: none) {
+    .flipped .tshirt {
+        opacity: 1;
+    }
+
+    .flipped::after {
+        border-color: var(--c-red);
+    }
+
+    .flipped .overlay {
+        opacity: 1;
+    }
+
+    .flipped .meta {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyboard focus mirrors hover. */
+.tile:focus-visible .tshirt {
+    opacity: 1;
+}
+
+.tile:focus-visible::after {
+    border-color: var(--c-red);
+}
+
+.tile:focus-visible .overlay {
+    opacity: 1;
+}
+
+.tile:focus-visible .meta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .spice {
-    font-size: var(--fs-label);
+    font-size: 11.25px;
     font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-label);
     color: var(--c-green-bright);
 }
 
 .name {
-    margin-top: 4px;
-    font-size: var(--fs-title);
+    margin-top: 2px;
+    font-size: 16.25px;
     font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-title);
     line-height: 1.1;
@@ -99,8 +152,8 @@
 }
 
 .role {
-    margin-top: 4px;
-    font-size: var(--fs-label);
+    margin-top: 2px;
+    font-size: 11.25px;
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-label);
     color: var(--c-muted-on-dark);
@@ -116,14 +169,26 @@
         gap: 10px;
     }
 
-    /* Touch: no hover — reveal the t-shirt photo and meta at rest. */
-    .tshirt,
-    .overlay,
-    .meta {
-        opacity: 1;
+    .spice {
+        font-size: 9px;
     }
 
-    .meta {
-        transform: none;
+    .name {
+        font-size: 13px;
+    }
+
+    .role {
+        font-size: 9px;
+    }
+
+    /* The staff grid fades in 2.5s after the section first scrolls into view. */
+    :global(html.reveal-ready) .grid {
+        opacity: 0;
+        transition: opacity 0.8s ease;
+    }
+
+    :global(html.reveal-ready) .section:global(.is-visible) .grid {
+        opacity: 1;
+        transition-delay: 2.5s;
     }
 }

@@ -14,20 +14,15 @@ type MobileMenuProps = {
     accent?: "green" | "gold" | "red" | "blue";
 };
 
-/**
- * Mobile menu (Figma 209:118 / 209:142): a centred frosted-glass panel dropping below
- * the nav. Portalled to <body> so its backdrop-filter blurs the actual page content
- * (a panel nested in the fixed header only blurs the header's own backdrop). Animates
- * in/out; the trigger toggles between "Menu" and "Close".
- */
 export default function MobileMenu({ links, accent = "green" }: MobileMenuProps) {
     const [open, setOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
 
-    // Render the portal only after mount so it doesn't run during SSR.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    useEffect(() => setMounted(true), []);
+    useEffect(() => {
+        const id = requestAnimationFrame(() => setMounted(true));
+        return () => cancelAnimationFrame(id);
+    }, []);
 
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "";

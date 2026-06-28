@@ -37,17 +37,14 @@ const items: FeatureItem[] = [
     {
         number: "06",
         kicker: "Sharper insights, faster",
-        // NOTE: the Figma title node (372:382) literally reads "Digital Content" — the same
-        // as card 03 — while the body is the AI-tools copy. This looks like a design typo.
-        // Using the literal Figma value as-is; flag to client to confirm.
-        title: "Digital Content",
+        title: "AI-Assisted Insights",
         body: "We use AI tools to surface consumer insights, test creative hypotheses, and identify content patterns before committing production budgets. No established Nigerian agency has built this as a named, premium service line. We have. It is a practical advantage in how we work, not a technology pitch.",
     },
 ];
 
 export default function Capabilities() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} data-stagger>
             <div className={styles.inner}>
                 <SectionHead
                     eyebrow="What we offer"

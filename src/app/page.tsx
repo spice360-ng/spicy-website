@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import NavBar from "@/components/NavBar/NavBar";
@@ -8,7 +10,25 @@ import Slideshow from "@/components/Slideshow/Slideshow";
 import FunGallery from "@/components/FunGallery/FunGallery";
 import { contact, route } from "@/lib/contact";
 import { HERO_SLIDES, MOTTO_BG, CANNES_IMG } from "@/data/groupPhotos";
+import { randomIndex } from "@/lib/random";
 import styles from "./page.module.scss";
+
+export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+    alternates: { canonical: "https://www.spice360.com.mg" },
+    openGraph: {
+        title: "Spice360 | We make brands impossible to ignore",
+        description:
+            "Spice360 builds integrated 360 campaigns rooted in cultural truths, from strategy to execution.",
+        url: "https://www.spice360.com.mg",
+    },
+    twitter: {
+        title: "Spice360 | We make brands impossible to ignore",
+        description:
+            "Spice360 builds integrated 360 campaigns rooted in cultural truths, from strategy to execution.",
+    },
+};
 
 const pillars = [
     {
@@ -68,13 +88,15 @@ const secondary = [
 ];
 
 export default function Home() {
+    const heroStart = randomIndex(HERO_SLIDES.length);
+
     return (
         <>
             <NavBar />
             <main>
-                {/* Hero */}
+
                 <section className={styles.hero}>
-                    <Slideshow images={HERO_SLIDES} priority className={styles.heroSlides} />
+                    <Slideshow images={HERO_SLIDES} priority startIndex={heroStart} className={styles.heroSlides} />
                     <div className={styles.heroScrim} aria-hidden />
                     <Glow position="top" tone="warm" />
                     <div className={styles.heroInner}>
@@ -105,8 +127,11 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* How we work */}
-                <section className={styles.hwwSection}>
+                <section
+                    className={styles.hwwSection}
+                    data-stagger
+                    style={{ "--stagger": "1s" } as CSSProperties}
+                >
                     <div className={styles.hwwInner}>
                         <p className={styles.hwwEyebrow}>Our three pillars</p>
                         <h2 className={styles.hwwHeading}>How we work</h2>
@@ -127,7 +152,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Motto */}
                 <section className={styles.motto} aria-label="Our motto">
                     <Image
                         src={MOTTO_BG}
@@ -145,7 +169,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Scoreboard */}
                 <section className={styles.sbSection}>
                     <Glow position="bottom" tone="warm" scale={2} />
                     <div className={styles.sbInner}>
@@ -163,8 +186,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Services */}
-                <section className={styles.svcSection}>
+                <section className={styles.svcSection} data-stagger>
                     <div className={styles.svcInner}>
                         <div className={styles.svcHead}>
                             <p className={styles.svcEyebrow}>What we do</p>
@@ -204,7 +226,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Leadership */}
                 <section className={styles.ldSection}>
                     <Glow position="bottom" tone="warm" scale={2} />
                     <div className={styles.ldInner}>
@@ -238,7 +259,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Brands */}
                 <section className={styles.brSection}>
                     <div className={styles.brPanel}>
                         <header className={styles.brHead}>
@@ -252,13 +272,12 @@ export default function Home() {
 
                         <p className={styles.brCopy}>
                             Active mandates include Indomie, Dano Milk, Power Oil, Kellogg&rsquo;s,
-                            Colgate Nigeria, 2sure, Hero, Minimie, Lush Hair, and Hypo &mdash;
+                            Colgate Nigeria, 2sure, Hero, Minimie, Lush Hair, and Hypo,
                             across food, personal care, and lifestyle.
                         </p>
                     </div>
                 </section>
 
-                {/* Team */}
                 <section className={styles.tmSection}>
                     <div className={styles.tmInner}>
                         <p className={styles.tmEyebrow}>Our Team</p>
@@ -273,7 +292,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Blog */}
                 <section className={styles.blSection}>
                     <Glow position="top" tone="warm" />
                     <div className={styles.blInner}>
@@ -330,23 +348,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Spice Digital */}
-                <section className={styles.sdSection}>
-                    <Glow position="top" tone="cool" />
-                    <div className={styles.sdInner}>
-                        <p className={styles.sdEyebrow}>A Spice360 sub-brand</p>
-                        <h2 className={styles.sdHeading}>
-                            Built a product.<br />Now build the brand.
-                        </h2>
-                        <p className={styles.sdCopy}>
-                            Spice Digital is our dedicated arm for African tech startups. Same
-                            creative standards. Different kind of client.
-                        </p>
-                        <Link href={route("spice-digital")} className={styles.sdCta}>
-                            Explore Spice Digital
-                        </Link>
-                    </div>
-                </section>
             </main>
             <Footer />
         </>
